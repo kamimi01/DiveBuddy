@@ -21,7 +21,7 @@ struct WelcomeView: View {
                 authView()
                     .padding(.bottom, 50)
             }
-            .padding(.horizontal, 35)
+            .padding(.horizontal, 20)
         }
     }
 }

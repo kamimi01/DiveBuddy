@@ -10,6 +10,7 @@ import SwiftUI
 enum ButtonType {
     case one
     case two
+    case three
 }
 
 struct RoundedButtonStyle: ButtonStyle {
@@ -33,20 +34,23 @@ private extension RoundedButtonStyle {
         case .two:
             return AnyView(RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.primaryWhite, lineWidth: 1.0))
+        case .three:
+            return AnyView(RoundedRectangle(cornerRadius: 10)
+                .fill(backgroundColor()))
         }
     }
 
     func fontColor() -> Color {
         switch buttonType {
-        case .one: return .accentBlue
-        case .two: return .primaryWhite
+        case .one           : return .accentBlue
+        case .two, .three   : return .primaryWhite
         }
     }
 
     func backgroundColor() -> Color {
         switch buttonType {
-        case .one: return .primaryWhite
-        case .two: return .accentBlue
+        case .one           : return .primaryWhite
+        case .two, .three   : return .accentBlue
         }
     }
 }
@@ -64,5 +68,13 @@ private extension RoundedButtonStyle {
         Color.primaryWhite
         Button("Register") {}
             .buttonStyle(RoundedButtonStyle(buttonType: .two))
+    }
+}
+
+#Preview {
+    ZStack {
+        Color.primaryWhite
+        Button("Register") {}
+            .buttonStyle(RoundedButtonStyle(buttonType: .three))
     }
 }

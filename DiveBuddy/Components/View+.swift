@@ -12,4 +12,8 @@ extension View {
     func roundedButton(_ buttonType: ButtonType = .one) -> some View {
         self.buttonStyle(RoundedButtonStyle(buttonType: buttonType))
     }
+
+    func roundedTextField() -> some View {
+        self.textFieldStyle(RoundedTextFieldStyle())
+    }
 }

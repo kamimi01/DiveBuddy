@@ -7,11 +7,17 @@
 
 import SwiftUI
 
+enum NavigationPath {
+    case toNewKitView
+}
+
 struct KitsView: View {
+    @State private var navigationPath: [NavigationPath] = []
+
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationPath) {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 30) {
                     instructionCardButton()
@@ -22,6 +28,9 @@ struct KitsView: View {
             .padding(.horizontal, 20)
             .navigationTitle("Kits")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationDestination(for: NavigationPath.self) { _ in
+                NewKitView()
+            }
         }
     }
 }
@@ -53,7 +62,9 @@ private extension KitsView {
     }
 
     func addKitCardButton() -> some View {
-        Button(action: {}) {
+        Button(action: {
+            navigationPath.append(.toNewKitView)
+        }) {
             Image(systemName: "plus")
                 .resizable()
                 .frame(width: 25, height: 25)

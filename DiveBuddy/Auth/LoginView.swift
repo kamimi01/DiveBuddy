@@ -40,13 +40,6 @@ private extension LoginView {
                 ZStack {
                     SecureField("", text: $viewModel.passwordInput)
                         .roundedTextField()
-//                    HStack {
-//                        Spacer()
-//                        Button(action: {}) {
-//                            Image(.closedEye)
-//                        }
-//                        .padding(.trailing, 10)
-//                    }
                 }
             }
         }

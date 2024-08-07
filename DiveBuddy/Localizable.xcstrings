@@ -89,6 +89,9 @@
         }
       }
     },
+    "Settings" : {
+
+    },
     "Sign up" : {
       "localizations" : {
         "ja" : {

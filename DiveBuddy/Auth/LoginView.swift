@@ -49,7 +49,9 @@ private extension LoginView {
 
     func logInButton() -> some View {
         VStack(spacing: 14) {
-            Button(action: {}) {
+            Button(action: {
+                viewModel.didTapLogInButton()
+            }) {
                 Text("Log in")
                     .font(.customFont(size: .three))
                     .foregroundStyle(.primaryWhite)
@@ -57,6 +59,9 @@ private extension LoginView {
                     .frame(maxWidth: .infinity)
             }
             .roundedButton(.three)
+            .fullScreenCover(isPresented: $viewModel.isPresentedTabBarView) {
+                TabBarView()
+            }
             HStack(spacing: 20) {
                 Text("Don't have account?")
                     .font(.customFont(size: .two))

@@ -49,7 +49,9 @@ private extension SignupView {
 
     func signupButton() -> some View {
         VStack(spacing: 14) {
-            Button(action: {}) {
+            Button(action: {
+                viewModel.didTapSignupButton()
+            }) {
                 Text("Sign up")
                     .font(.customFont(size: .three))
                     .foregroundStyle(.primaryWhite)
@@ -57,6 +59,9 @@ private extension SignupView {
                     .frame(maxWidth: .infinity)
             }
             .roundedButton(.three)
+            .fullScreenCover(isPresented: $viewModel.isPresentedTabBarView) {
+                TabBarView()
+            }
             HStack(spacing: 20) {
                 Text("Do you have account?")
                     .font(.customFont(size: .two))

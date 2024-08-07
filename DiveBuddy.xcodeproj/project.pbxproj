@@ -17,6 +17,10 @@
 		D40FF43D2C62EFA700585691 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF43C2C62EFA700585691 /* SignupView.swift */; };
 		D40FF43F2C62EFE400585691 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF43E2C62EFE400585691 /* LoginViewModel.swift */; };
 		D462ADB62C63E5660054D73A /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADB52C63E5660054D73A /* SignupViewModel.swift */; };
+		D462ADBA2C63E7380054D73A /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADB92C63E7380054D73A /* TabBarView.swift */; };
+		D462ADBD2C63E7A40054D73A /* KitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADBC2C63E7A40054D73A /* KitsView.swift */; };
+		D462ADBF2C63E7B80054D73A /* GearsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADBE2C63E7B80054D73A /* GearsView.swift */; };
+		D462ADC22C63E7CE0054D73A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADC12C63E7CE0054D73A /* SettingsView.swift */; };
 		D4B298E82C5EBB2C004D32BB /* DiveBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */; };
 		D4B298EA2C5EBB2C004D32BB /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B298E92C5EBB2C004D32BB /* WelcomeView.swift */; };
 		D4B298EC2C5EBB2D004D32BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B298EB2C5EBB2D004D32BB /* Assets.xcassets */; };
@@ -55,6 +59,10 @@
 		D40FF43E2C62EFE400585691 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D41F51682C62A83900BEEC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D462ADB52C63E5660054D73A /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		D462ADB92C63E7380054D73A /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		D462ADBC2C63E7A40054D73A /* KitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitsView.swift; sourceTree = "<group>"; };
+		D462ADBE2C63E7B80054D73A /* GearsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearsView.swift; sourceTree = "<group>"; };
+		D462ADC12C63E7CE0054D73A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D4B298E42C5EBB2C004D32BB /* DiveBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiveBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveBuddyApp.swift; sourceTree = "<group>"; };
 		D4B298E92C5EBB2C004D32BB /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -130,6 +138,38 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		D462ADB72C63E6DF0054D73A /* Kits */ = {
+			isa = PBXGroup;
+			children = (
+				D462ADBC2C63E7A40054D73A /* KitsView.swift */,
+			);
+			path = Kits;
+			sourceTree = "<group>";
+		};
+		D462ADB82C63E7280054D73A /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D462ADB92C63E7380054D73A /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		D462ADBB2C63E78F0054D73A /* Gears */ = {
+			isa = PBXGroup;
+			children = (
+				D462ADBE2C63E7B80054D73A /* GearsView.swift */,
+			);
+			path = Gears;
+			sourceTree = "<group>";
+		};
+		D462ADC02C63E7C40054D73A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D462ADC12C63E7CE0054D73A /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		D4B298DB2C5EBB2C004D32BB = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +193,10 @@
 		D4B298E62C5EBB2C004D32BB /* DiveBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				D462ADC02C63E7C40054D73A /* Settings */,
+				D462ADBB2C63E78F0054D73A /* Gears */,
+				D462ADB82C63E7280054D73A /* TabBar */,
+				D462ADB72C63E6DF0054D73A /* Kits */,
 				D41F51692C62A8D900BEEC1D /* Welcome */,
 				D40FF4332C62C3C700585691 /* Auth */,
 				D40727912C62AFA90038C5B0 /* Extensions */,
@@ -323,16 +367,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D462ADC22C63E7CE0054D73A /* SettingsView.swift in Sources */,
 				D40FF43D2C62EFA700585691 /* SignupView.swift in Sources */,
 				D40FF4372C62CBF800585691 /* LoginView.swift in Sources */,
 				D40FF43B2C62EE2700585691 /* WelcomeViewModel.swift in Sources */,
 				D407278D2C62AA9B0038C5B0 /* Font+.swift in Sources */,
+				D462ADBD2C63E7A40054D73A /* KitsView.swift in Sources */,
 				D40FF4392C62CECE00585691 /* RoundedTextFieldStyle.swift in Sources */,
 				D462ADB62C63E5660054D73A /* SignupViewModel.swift in Sources */,
 				D40727902C62AEFD0038C5B0 /* RoundedButtonStyle.swift in Sources */,
 				D4B298EA2C5EBB2C004D32BB /* WelcomeView.swift in Sources */,
+				D462ADBF2C63E7B80054D73A /* GearsView.swift in Sources */,
 				D40727932C62AFBA0038C5B0 /* View+.swift in Sources */,
 				D40FF43F2C62EFE400585691 /* LoginViewModel.swift in Sources */,
+				D462ADBA2C63E7380054D73A /* TabBarView.swift in Sources */,
 				D4B298E82C5EBB2C004D32BB /* DiveBuddyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

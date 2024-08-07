@@ -11,13 +11,18 @@ struct KitsView: View {
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
 
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 30) {
-                instructionCardButton()
-                addKitCardButton()
+        NavigationStack {
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 30) {
+                    instructionCardButton()
+                    addKitCardButton()
+                }
             }
+            .padding(.top, 20)
+            .padding(.horizontal, 20)
+            .navigationTitle("Kits")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding(.horizontal, 20)
     }
 }
 

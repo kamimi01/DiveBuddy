@@ -13,6 +13,9 @@
 		D40FF4352C62C5F500585691 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D40FF4342C62C5F500585691 /* Localizable.xcstrings */; };
 		D40FF4372C62CBF800585691 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF4362C62CBF800585691 /* LoginView.swift */; };
 		D40FF4392C62CECE00585691 /* RoundedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF4382C62CECE00585691 /* RoundedTextFieldStyle.swift */; };
+		D40FF43B2C62EE2700585691 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF43A2C62EE2700585691 /* WelcomeViewModel.swift */; };
+		D40FF43D2C62EFA700585691 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF43C2C62EFA700585691 /* SignupView.swift */; };
+		D40FF43F2C62EFE400585691 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF43E2C62EFE400585691 /* LoginViewModel.swift */; };
 		D4B298E82C5EBB2C004D32BB /* DiveBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */; };
 		D4B298EA2C5EBB2C004D32BB /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B298E92C5EBB2C004D32BB /* WelcomeView.swift */; };
 		D4B298EC2C5EBB2D004D32BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B298EB2C5EBB2D004D32BB /* Assets.xcassets */; };
@@ -46,6 +49,9 @@
 		D40FF4342C62C5F500585691 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D40FF4362C62CBF800585691 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D40FF4382C62CECE00585691 /* RoundedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldStyle.swift; sourceTree = "<group>"; };
+		D40FF43A2C62EE2700585691 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		D40FF43C2C62EFA700585691 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		D40FF43E2C62EFE400585691 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D41F51682C62A83900BEEC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D4B298E42C5EBB2C004D32BB /* DiveBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiveBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveBuddyApp.swift; sourceTree = "<group>"; };
@@ -106,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				D40FF4362C62CBF800585691 /* LoginView.swift */,
+				D40FF43C2C62EFA700585691 /* SignupView.swift */,
+				D40FF43E2C62EFE400585691 /* LoginViewModel.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -114,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				D4B298E92C5EBB2C004D32BB /* WelcomeView.swift */,
+				D40FF43A2C62EE2700585691 /* WelcomeViewModel.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -311,12 +320,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40FF43D2C62EFA700585691 /* SignupView.swift in Sources */,
 				D40FF4372C62CBF800585691 /* LoginView.swift in Sources */,
+				D40FF43B2C62EE2700585691 /* WelcomeViewModel.swift in Sources */,
 				D407278D2C62AA9B0038C5B0 /* Font+.swift in Sources */,
 				D40FF4392C62CECE00585691 /* RoundedTextFieldStyle.swift in Sources */,
 				D40727902C62AEFD0038C5B0 /* RoundedButtonStyle.swift in Sources */,
 				D4B298EA2C5EBB2C004D32BB /* WelcomeView.swift in Sources */,
 				D40727932C62AFBA0038C5B0 /* View+.swift in Sources */,
+				D40FF43F2C62EFE400585691 /* LoginViewModel.swift in Sources */,
 				D4B298E82C5EBB2C004D32BB /* DiveBuddyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

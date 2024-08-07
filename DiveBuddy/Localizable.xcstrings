@@ -1,12 +1,25 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "Continue as Guest" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ゲストとしてログイン"
+          }
+        }
+      }
+    },
+    "Don't have account?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "既にアカウントを持っていますか？"
           }
         }
       }
@@ -31,6 +44,26 @@
         }
       }
     },
+    "Or log in with" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "または"
+          }
+        }
+      }
+    },
+    "Password" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パスワード"
+          }
+        }
+      }
+    },
     "Register" : {
       "localizations" : {
         "ja" : {
@@ -41,12 +74,44 @@
         }
       }
     },
+    "Sign up" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サインアップ"
+          }
+        }
+      }
+    },
+    "supposed to be sign up screen" : {
+
+    },
+    "ThirdParyLogin: Facebook (will be replaced with FirebaseUI)" : {
+
+    },
+    "ThirdParyLogin: Google (will be replaced with FirebaseUI)" : {
+
+    },
+    "ThirdParyLogin: X (will be replaced with FirebaseUI)" : {
+
+    },
     "Welcome" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ようこそ"
+          }
+        }
+      }
+    },
+    "Your email" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メールアドレス"
           }
         }
       }

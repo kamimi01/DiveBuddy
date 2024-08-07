@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @ObservedObject private var viewModel = WelcomeViewModel()
+
     var body: some View {
         ZStack {
             Color.accentBlue
@@ -40,27 +42,32 @@ private extension WelcomeView {
 
     func authView() -> some View {
         VStack(spacing: 24) {
-            registerButton()
+            signUpButton()
             loginButton()
             guestLoginButton()
         }
     }
 
-    func registerButton() -> some View {
+    func signUpButton() -> some View {
         Button(action: {
-            // TODO: do something
+            viewModel.didTapRegisterButton()
         }) {
-            Text("Register")
+            Text("Sign up")
                 .font(.customFont(size: .three, weight: .bold))
                 .foregroundStyle(.accentBlue)
                 .padding(.vertical, 11)
                 .frame(maxWidth: .infinity)
         }
         .roundedButton(.one)
+        .fullScreenCover(isPresented: $viewModel.isPresentedRegisterView) {
+            SignupView()
+        }
     }
 
     func loginButton() -> some View {
-        Button(action: {}) {
+        Button(action: {
+            viewModel.didTapLoginButton()
+        }) {
             Text("Log in")
                 .font(.customFont(size: .three, weight: .bold))
                 .foregroundStyle(.primaryWhite)
@@ -68,6 +75,9 @@ private extension WelcomeView {
                 .frame(maxWidth: .infinity)
         }
         .roundedButton(.two)
+        .fullScreenCover(isPresented: $viewModel.isPresentedLoginView) {
+            LoginView()
+        }
     }
 
     func guestLoginButton() -> some View {

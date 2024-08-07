@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var emailInput = ""
-    @State private var passwordInput = ""
+    @ObservedObject private var viewModel = LoginViewModel()
 
     var body: some View {
         NavigationStack {
@@ -32,14 +31,14 @@ private extension LoginView {
             VStack(alignment: .leading, spacing: 6) {
                 Text("Your email")
                     .font(.customFont(size: .three))
-                TextField("", text: $emailInput)
+                TextField("", text: $viewModel.emailInput)
                     .roundedTextField()
             }
             VStack(alignment: .leading, spacing: 6) {
                 Text("Password")
                     .font(.customFont(size: .three))
                 ZStack {
-                    TextField("", text: $passwordInput)
+                    TextField("", text: $viewModel.passwordInput)
                         .roundedTextField()
                     HStack {
                         Spacer()
@@ -67,10 +66,15 @@ private extension LoginView {
                 Text("Don't have account?")
                     .font(.customFont(size: .two))
                     .foregroundStyle(.primaryTextBlack)
-                Button(action: {}) {
+                Button(action: {
+                    viewModel.didTapSignupButton()
+                }) {
                     Text("Sign up")
                         .font(.customFont(size: .two, weight: .bold))
                         .foregroundStyle(.accentBlue)
+                }
+                .fullScreenCover(isPresented: $viewModel.isPresentedSignupView) {
+                    SignupView()
                 }
             }
         }

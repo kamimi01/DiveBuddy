@@ -41,10 +41,8 @@ private extension LoginView {
             VStack(alignment: .leading, spacing: 6) {
                 Text("Password")
                     .font(.customFont(size: .three))
-                ZStack {
-                    SecureField("", text: $viewModel.passwordInput)
-                        .roundedTextField()
-                }
+                SecureField("", text: $viewModel.passwordInput)
+                    .roundedTextField()
             }
         }
     }

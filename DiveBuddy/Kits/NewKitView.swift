@@ -8,8 +8,78 @@
 import SwiftUI
 
 struct NewKitView: View {
+    @ObservedObject private var viewModel = NewKitViewModel()
+
     var body: some View {
-        Text("New Kit View")
+        VStack(spacing: 20) {
+            kitColorPicker()
+                .padding(.top, 60)
+            kitTitle()
+            gearsList()
+        }
+        .padding(.horizontal, 20)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                doneButton()
+            }
+        }
+    }
+}
+
+private extension NewKitView {
+    func kitColorPicker() -> some View {
+        VStack(spacing: 50) {
+            ZStack {
+                ColorPicker("", selection: $viewModel.kitColor)
+                    .labelsHidden()
+                    .scaleEffect(CGSize(width: 4, height: 4))
+                Text("🌻")
+                    .font(.customFont(size: .one))
+                    .frame(width: 40, height: 40)
+                    .allowsHitTesting(false)
+            }
+            Button(action: {}) {
+                Text("Change emoji")
+                    .foregroundStyle(.accentBlue)
+            }
+        }
+    }
+
+    func kitTitle() -> some View {
+        VStack(alignment: .leading) {
+            Text("Title")
+            TextField("Summar", text: $viewModel.kitTitleInput)
+                .roundedTextField()
+        }
+    }
+
+    func gearsList() -> some View {
+        VStack(alignment: .leading) {
+            Text("Gears")
+            ScrollView {
+                ForEach(viewModel.gears) { gear in
+                    VStack {
+                        HStack(alignment: .center, spacing: 20) {
+                            Image(.noChecked)
+                            Image(systemName: "circle")
+                                .resizable()
+                                .frame(width: 70, height: 70)
+                            Text(gear.name)
+                                .font(.customFont(size: .three))
+                            Spacer()
+                        }
+                        .frame(height: 100)
+                        Divider()
+                    }
+                }
+            }
+        }
+    }
+
+    func doneButton() -> some View {
+        Button(action: {}) {
+            Text("Done")
+        }
     }
 }
 

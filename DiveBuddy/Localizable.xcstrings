@@ -4,6 +4,12 @@
     "" : {
 
     },
+    "🌻" : {
+
+    },
+    "Change emoji" : {
+
+    },
     "Continue as Guest" : {
       "localizations" : {
         "ja" : {
@@ -26,6 +32,9 @@
           }
         }
       }
+    },
+    "Done" : {
+
     },
     "Gears" : {
 
@@ -58,9 +67,6 @@
           }
         }
       }
-    },
-    "New Kit View" : {
-
     },
     "Or log in with" : {
       "localizations" : {
@@ -108,6 +114,9 @@
         }
       }
     },
+    "Summar" : {
+
+    },
     "ThirdParyLogin: Facebook (will be replaced with FirebaseUI)" : {
 
     },
@@ -115,6 +124,9 @@
 
     },
     "ThirdParyLogin: X (will be replaced with FirebaseUI)" : {
+
+    },
+    "Title" : {
 
     },
     "Welcome" : {

@@ -31,6 +31,7 @@
 		D4B298F92C5EBB2D004D32BB /* DiveBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B298F82C5EBB2D004D32BB /* DiveBuddyTests.swift */; };
 		D4B299032C5EBB2D004D32BB /* DiveBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B299022C5EBB2D004D32BB /* DiveBuddyUITests.swift */; };
 		D4B299052C5EBB2D004D32BB /* DiveBuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B299042C5EBB2D004D32BB /* DiveBuddyUITestsLaunchTests.swift */; };
+		D4C41AE62C643B7700E3C83A /* EmojiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = D4C41AE52C643B7700E3C83A /* EmojiPicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C41AE62C643B7700E3C83A /* EmojiPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +262,9 @@
 			dependencies = (
 			);
 			name = DiveBuddy;
+			packageProductDependencies = (
+				D4C41AE52C643B7700E3C83A /* EmojiPicker */,
+			);
 			productName = DiveBuddy;
 			productReference = D4B298E42C5EBB2C004D32BB /* DiveBuddy.app */;
 			productType = "com.apple.product-type.application";
@@ -333,6 +338,9 @@
 				ja,
 			);
 			mainGroup = D4B298DB2C5EBB2C004D32BB;
+			packageReferences = (
+				D4C41AE42C643B7700E3C83A /* XCRemoteSwiftPackageReference "EmojiPicker" */,
+			);
 			productRefGroup = D4B298E52C5EBB2C004D32BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -723,6 +731,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D4C41AE42C643B7700E3C83A /* XCRemoteSwiftPackageReference "EmojiPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kelvas09/EmojiPicker.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D4C41AE52C643B7700E3C83A /* EmojiPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4C41AE42C643B7700E3C83A /* XCRemoteSwiftPackageReference "EmojiPicker" */;
+			productName = EmojiPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D4B298DC2C5EBB2C004D32BB /* Project object */;
 }

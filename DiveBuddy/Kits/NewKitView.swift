@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import EmojiPicker
 
 struct NewKitView: View {
     @ObservedObject private var viewModel = NewKitViewModel()
@@ -33,14 +34,23 @@ private extension NewKitView {
                 ColorPicker("", selection: $viewModel.kitColor)
                     .labelsHidden()
                     .scaleEffect(CGSize(width: 4, height: 4))
-                Text("🌻")
+                Text(viewModel.selectedEmoji?.value ?? "🌻")
                     .font(.customFont(size: .one))
                     .frame(width: 40, height: 40)
                     .allowsHitTesting(false)
             }
-            Button(action: {}) {
+            Button(action: {
+                viewModel.didTapChangeEmojiButton()
+            }) {
                 Text("Change emoji")
                     .foregroundStyle(.accentBlue)
+            }
+            .sheet(isPresented: $viewModel.isPresentedEmojiPicker) {
+                NavigationStack {
+                    EmojiPickerView(selectedEmoji: $viewModel.selectedEmoji, selectedColor: .primaryIconGray)
+                        .navigationTitle("Select emoji")
+                        .navigationBarTitleDisplayMode(.inline)
+                }
             }
         }
     }

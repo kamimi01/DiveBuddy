@@ -7,10 +7,13 @@
 
 import Foundation
 import SwiftUI
+import EmojiPicker
 
 final class NewKitViewModel: ObservableObject {
     @Published var kitColor: Color = .secondaryBgGray
     @Published var kitTitleInput = ""
+    @Published var isPresentedEmojiPicker = false
+    @Published var selectedEmoji: Emoji?
 
     struct Gear: Identifiable {
         let name: String
@@ -25,4 +28,8 @@ final class NewKitViewModel: ObservableObject {
         Gear(name: "Gloves", imageURL: ""),
         Gear(name: "Belt", imageURL: "")
     ]
+
+    func didTapChangeEmojiButton() {
+        isPresentedEmojiPicker = true
+    }
 }

@@ -38,15 +38,15 @@ private extension LoginView {
                 Text("Password")
                     .font(.customFont(size: .three))
                 ZStack {
-                    TextField("", text: $viewModel.passwordInput)
+                    SecureField("", text: $viewModel.passwordInput)
                         .roundedTextField()
-                    HStack {
-                        Spacer()
-                        Button(action: {}) {
-                            Image(.closedEye)
-                        }
-                        .padding(.trailing, 10)
-                    }
+//                    HStack {
+//                        Spacer()
+//                        Button(action: {}) {
+//                            Image(.closedEye)
+//                        }
+//                        .padding(.trailing, 10)
+//                    }
                 }
             }
         }

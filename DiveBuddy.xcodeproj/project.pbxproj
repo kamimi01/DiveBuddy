@@ -150,10 +150,10 @@
 		D4B298E62C5EBB2C004D32BB /* DiveBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				D41F51692C62A8D900BEEC1D /* Welcome */,
 				D40FF4332C62C3C700585691 /* Auth */,
 				D40727912C62AFA90038C5B0 /* Extensions */,
 				D407278E2C62AEEA0038C5B0 /* Components */,
-				D41F51692C62A8D900BEEC1D /* Welcome */,
 				D41F51682C62A83900BEEC1D /* Info.plist */,
 				D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */,
 				D4B298EB2C5EBB2D004D32BB /* Assets.xcassets */,

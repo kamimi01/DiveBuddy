@@ -65,7 +65,7 @@ private extension RoundedButtonStyle {
 
 #Preview {
     ZStack {
-        Color.primaryWhite
+        Color.accentBlue
         Button("Register") {}
             .buttonStyle(RoundedButtonStyle(buttonType: .two))
     }

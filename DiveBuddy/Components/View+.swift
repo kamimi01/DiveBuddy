@@ -16,4 +16,12 @@ extension View {
     func roundedTextField() -> some View {
         self.textFieldStyle(RoundedTextFieldStyle())
     }
+
+    func roundedCardButton() -> some View {
+        self.buttonStyle(RoundedCardButtonStyle())
+    }
+
+    func roundedCardButtonFrame() -> some View {
+        self.frame(width: 150, height: 160)
+    }
 }

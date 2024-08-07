@@ -11,21 +11,25 @@ struct LoginView: View {
     @ObservedObject private var viewModel = LoginViewModel()
 
     var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading, spacing: 40) {
-                emailPassInput()
-                    .padding(.top, 20)
-                logInButton()
-                Spacer()
-                thirdPartyLoginView()
-            }
-            .padding(.horizontal, 20)
-            .navigationTitle("Log in")
+        VStack(alignment: .leading, spacing: 30) {
+            loginText()
+                .padding(.top, 40)
+            emailPassInput()
+                .padding(.top, 20)
+            logInButton()
+            Spacer()
+            thirdPartyLoginView()
         }
+        .padding(.horizontal, 20)
     }
 }
 
 private extension LoginView {
+    func loginText() -> some View {
+        Text("Log in")
+            .font(.customFont(size: .one, weight: .bold))
+    }
+
     func emailPassInput() -> some View {
         VStack(spacing: 20) {
             VStack(alignment: .leading, spacing: 6) {

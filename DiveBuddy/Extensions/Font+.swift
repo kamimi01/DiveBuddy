@@ -12,8 +12,8 @@ enum CustomFontSize: CGFloat {
     case one = 36
     /// 16
     case two = 16
-    /// 20
-    case three = 20
+    /// 17
+    case three = 17
     /// 13
     case four = 13
 }

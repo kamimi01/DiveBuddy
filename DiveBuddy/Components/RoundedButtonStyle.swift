@@ -14,7 +14,7 @@ enum ButtonType {
 }
 
 struct RoundedButtonStyle: ButtonStyle {
-    var buttonType: ButtonType = .one
+    var buttonType: ButtonType
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

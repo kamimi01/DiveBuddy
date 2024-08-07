@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension View {
-    func roundedButton(_ buttonType: ButtonType = .one) -> some View {
+    func roundedButton(_ buttonType: ButtonType) -> some View {
         self.buttonStyle(RoundedButtonStyle(buttonType: buttonType))
     }
 
@@ -17,8 +17,8 @@ extension View {
         self.textFieldStyle(RoundedTextFieldStyle())
     }
 
-    func roundedCardButton() -> some View {
-        self.buttonStyle(RoundedCardButtonStyle())
+    func roundedCardButton(_ buttonType: CardButtonType) -> some View {
+        self.buttonStyle(RoundedCardButtonStyle(buttonType: buttonType))
     }
 
     func roundedCardButtonFrame() -> some View {

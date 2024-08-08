@@ -24,9 +24,14 @@ struct GearListCellView: View {
                 }
                 .frame(width: 70, height: 70)
                 .clipShape(.rect(cornerRadius: 10))
-                Text(gear.name)
-                    .foregroundStyle(.primaryTextBlack)
-                    .font(.customFont(size: .three))
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(gear.name)
+                        .foregroundStyle(.primaryTextBlack)
+                        .font(.customFont(size: .three))
+                    Text(gear.brand)
+                        .foregroundStyle(.secondaryTextGray)
+                        .font(.customFont(size: .four))
+                }
                 Spacer()
             }
         }
@@ -35,5 +40,5 @@ struct GearListCellView: View {
 }
 
 #Preview {
-    GearListCellView(gear: Gear(name: "BCD", imageURL: "https://picsum.photos/200"))
+    GearListCellView(gear: Gear(name: "BCD", imageURL: "https://picsum.photos/200", brand: "TUSA"))
 }

@@ -15,7 +15,7 @@ struct GearListCellInCheckListView: View {
         Button(action: {
             viewModel.didTapCell()
         }) {
-            HStack(spacing: 10) {
+            HStack(spacing: 20) {
                 AsyncImage(url: URL(string: gear.imageURL)) { image in
                     image.resizable()
                 } placeholder: {
@@ -23,8 +23,13 @@ struct GearListCellInCheckListView: View {
                 }
                 .frame(width: 70, height: 70)
                 .clipShape(.rect(cornerRadius: 10))
-                Text(gear.name)
-                    .foregroundStyle(viewModel.isSelected ? .primaryWhite : .primaryTextBlack)
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(gear.name)
+                        .foregroundStyle(viewModel.isSelected ? .primaryWhite : .primaryTextBlack)
+                    Text(gear.brand)
+                        .foregroundStyle(viewModel.isSelected ? .primaryWhite : .secondaryTextGray)
+                        .font(.customFont(size: .four))
+                }
                 Spacer()
                 Image(viewModel.isSelected ? .checked : .noChecked)
             }
@@ -38,5 +43,5 @@ struct GearListCellInCheckListView: View {
 }
 
 #Preview {
-    GearListCellInCheckListView(gear: Gear(name: "BCD", imageURL: "https://picsum.photos/200"))
+    GearListCellInCheckListView(gear: Gear(name: "BCD", imageURL: "https://picsum.photos/200", brand: "TUSA"))
 }

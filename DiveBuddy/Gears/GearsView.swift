@@ -34,7 +34,7 @@ private extension GearsView {
     func instructionCardButton() -> some View {
         // TODO: delete this button later
         Button(action: {
-            navigationPath.append(.toKitCheckListView)
+            navigationPath.append(.toGearDetailView)
         }) {
             VStack(spacing: 10) {
                 circleView(emojiText: "🔧")

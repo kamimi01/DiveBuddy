@@ -41,6 +41,7 @@
 		D4CC2EA42C653423003EDEDE /* KitListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2EA32C653423003EDEDE /* KitListCellView.swift */; };
 		D4CC2EA62C653CD1003EDEDE /* GearDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2EA52C653CD1003EDEDE /* GearDetailView.swift */; };
 		D4CC2EA82C653E4D003EDEDE /* GearListCellInGearsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2EA72C653E4D003EDEDE /* GearListCellInGearsView.swift */; };
+		D4CC2EAC2C6548A9003EDEDE /* GearDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2EAB2C6548A9003EDEDE /* GearDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		D4CC2EA32C653423003EDEDE /* KitListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitListCellView.swift; sourceTree = "<group>"; };
 		D4CC2EA52C653CD1003EDEDE /* GearDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearDetailView.swift; sourceTree = "<group>"; };
 		D4CC2EA72C653E4D003EDEDE /* GearListCellInGearsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListCellInGearsView.swift; sourceTree = "<group>"; };
+		D4CC2EAB2C6548A9003EDEDE /* GearDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				D462ADBE2C63E7B80054D73A /* GearsView.swift */,
 				D4CC2EA52C653CD1003EDEDE /* GearDetailView.swift */,
 				D4CC2EA72C653E4D003EDEDE /* GearListCellInGearsView.swift */,
+				D4CC2EAB2C6548A9003EDEDE /* GearDetailViewModel.swift */,
 			);
 			path = Gears;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				D40FF4372C62CBF800585691 /* LoginView.swift in Sources */,
 				D40FF43B2C62EE2700585691 /* WelcomeViewModel.swift in Sources */,
 				D407278D2C62AA9B0038C5B0 /* Font+.swift in Sources */,
+				D4CC2EAC2C6548A9003EDEDE /* GearDetailViewModel.swift in Sources */,
 				D462ADBD2C63E7A40054D73A /* KitsView.swift in Sources */,
 				D40FF4392C62CECE00585691 /* RoundedTextFieldStyle.swift in Sources */,
 				D4CC2EA82C653E4D003EDEDE /* GearListCellInGearsView.swift in Sources */,

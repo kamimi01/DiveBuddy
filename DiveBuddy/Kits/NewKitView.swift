@@ -68,17 +68,8 @@ private extension NewKitView {
             Text("Gears")
             ScrollView {
                 ForEach(viewModel.gears) { gear in
-                    VStack {
-                        HStack(alignment: .center, spacing: 20) {
-                            Image(.noChecked)
-                            Image(systemName: "circle")
-                                .resizable()
-                                .frame(width: 70, height: 70)
-                            Text(gear.name)
-                                .font(.customFont(size: .three))
-                            Spacer()
-                        }
-                        .frame(height: 100)
+                    LazyVStack {
+                        GearListCellView(gear: gear)
                         Divider()
                     }
                 }

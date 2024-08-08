@@ -10,6 +10,7 @@ import SwiftUI
 enum NavigationPath {
     case toNewKitView
     case toKitCheckListView
+    case toGearDetailView
 }
 
 struct KitsView: View {
@@ -33,6 +34,8 @@ struct KitsView: View {
                 switch path {
                 case .toNewKitView:       NewKitView()
                 case .toKitCheckListView: KitCheckListView()
+                default:
+                    EmptyView()
                 }
             }
         }

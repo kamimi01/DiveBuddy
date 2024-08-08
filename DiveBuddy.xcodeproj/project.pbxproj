@@ -34,6 +34,7 @@
 		D4C41AE62C643B7700E3C83A /* EmojiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = D4C41AE52C643B7700E3C83A /* EmojiPicker */; };
 		D4CC2E962C646142003EDEDE /* GearListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2E952C646142003EDEDE /* GearListCellView.swift */; };
 		D4CC2E982C6462A7003EDEDE /* GearListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2E972C6462A7003EDEDE /* GearListCellViewModel.swift */; };
+		D4CC2E9C2C64659A003EDEDE /* KitCheckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2E9B2C64659A003EDEDE /* KitCheckListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		D4B299042C5EBB2D004D32BB /* DiveBuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveBuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4CC2E952C646142003EDEDE /* GearListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListCellView.swift; sourceTree = "<group>"; };
 		D4CC2E972C6462A7003EDEDE /* GearListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListCellViewModel.swift; sourceTree = "<group>"; };
+		D4CC2E9B2C64659A003EDEDE /* KitCheckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitCheckListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,11 +156,9 @@
 		D462ADB72C63E6DF0054D73A /* Kits */ = {
 			isa = PBXGroup;
 			children = (
+				D4CC2E9A2C6464F2003EDEDE /* KitCheckList */,
+				D4CC2E992C6464DD003EDEDE /* NewKit */,
 				D462ADBC2C63E7A40054D73A /* KitsView.swift */,
-				D462ADC52C63FDC70054D73A /* NewKitView.swift */,
-				D462ADC72C6422CA0054D73A /* NewKitViewModel.swift */,
-				D4CC2E952C646142003EDEDE /* GearListCellView.swift */,
-				D4CC2E972C6462A7003EDEDE /* GearListCellViewModel.swift */,
 			);
 			path = Kits;
 			sourceTree = "<group>";
@@ -250,6 +250,25 @@
 				D4B299042C5EBB2D004D32BB /* DiveBuddyUITestsLaunchTests.swift */,
 			);
 			path = DiveBuddyUITests;
+			sourceTree = "<group>";
+		};
+		D4CC2E992C6464DD003EDEDE /* NewKit */ = {
+			isa = PBXGroup;
+			children = (
+				D462ADC52C63FDC70054D73A /* NewKitView.swift */,
+				D462ADC72C6422CA0054D73A /* NewKitViewModel.swift */,
+				D4CC2E952C646142003EDEDE /* GearListCellView.swift */,
+				D4CC2E972C6462A7003EDEDE /* GearListCellViewModel.swift */,
+			);
+			path = NewKit;
+			sourceTree = "<group>";
+		};
+		D4CC2E9A2C6464F2003EDEDE /* KitCheckList */ = {
+			isa = PBXGroup;
+			children = (
+				D4CC2E9B2C64659A003EDEDE /* KitCheckListView.swift */,
+			);
+			path = KitCheckList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +411,7 @@
 			files = (
 				D462ADC82C6422CA0054D73A /* NewKitViewModel.swift in Sources */,
 				D462ADC62C63FDC70054D73A /* NewKitView.swift in Sources */,
+				D4CC2E9C2C64659A003EDEDE /* KitCheckListView.swift in Sources */,
 				D462ADC22C63E7CE0054D73A /* SettingsView.swift in Sources */,
 				D40FF43D2C62EFA700585691 /* SignupView.swift in Sources */,
 				D40FF4372C62CBF800585691 /* LoginView.swift in Sources */,

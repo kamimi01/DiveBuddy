@@ -9,6 +9,7 @@ import SwiftUI
 
 enum NavigationPath {
     case toNewKitView
+    case toKitCheckListView
 }
 
 struct KitsView: View {
@@ -28,8 +29,11 @@ struct KitsView: View {
             .padding(.horizontal, 20)
             .navigationTitle("Kits")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: NavigationPath.self) { _ in
-                NewKitView()
+            .navigationDestination(for: NavigationPath.self) { path in
+                switch path {
+                case .toNewKitView:       NewKitView()
+                case .toKitCheckListView: KitCheckListView()
+                }
             }
         }
     }
@@ -37,7 +41,10 @@ struct KitsView: View {
 
 private extension KitsView {
     func instructionCardButton() -> some View {
-        Button(action: {}) {
+        // TODO: delete this button later
+        Button(action: {
+            navigationPath.append(.toKitCheckListView)
+        }) {
             VStack(spacing: 10) {
                 circleView(emojiText: "🎉")
                 Text("Let’s start to create your own gear kit")

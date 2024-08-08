@@ -46,7 +46,7 @@ private extension KitsView {
             navigationPath.append(.toKitCheckListView)
         }) {
             VStack(spacing: 10) {
-                circleView(emojiText: "🎉")
+                circleView(emojiText: "🗳️")
                 Text("Let’s start to create your own gear kit")
                     .multilineTextAlignment(.center)
                     .font(.customFont(size: .two, weight: .bold))

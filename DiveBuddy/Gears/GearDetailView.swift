@@ -29,7 +29,7 @@ private extension GearDetailView {
             ZStack {
                 Circle()
                     .fill(.secondaryBgGray)
-                    .frame(width: 80, height: 80)
+                    .frame(width: 100, height: 100)
                 Image(systemName: "square.and.pencil")
                     .resizable()
                     .frame(width: 25, height: 25)
@@ -39,7 +39,7 @@ private extension GearDetailView {
     }
 
     func gearDetailTextView() -> some View {
-        VStack(spacing: 15) {
+        VStack(spacing: 20) {
             nameView()
             brandView()
             priceView()
@@ -101,12 +101,24 @@ private extension GearDetailView {
             Text("Maintenance History")
                 .foregroundStyle(.primaryTextBlack)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            HStack {
-                Text("2023/01/15")
-                Text("Overhaul")
+            ForEach(viewModel.maitenanceHistories) { history in
+                VStack {
+                    Button(action: {}) {
+                        HStack {
+                            Text(history.date.description)
+                            Spacer()
+                            Text(history.details)
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                    .foregroundStyle(.primaryTextBlack)
+                    .frame(height: 35)
+                    Divider()
+                }
             }
         }
     }
+
 
     func noteView() -> some View {
         VStack(alignment: .leading) {

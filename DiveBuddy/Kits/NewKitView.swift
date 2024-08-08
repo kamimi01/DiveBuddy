@@ -12,13 +12,15 @@ struct NewKitView: View {
     @ObservedObject private var viewModel = NewKitViewModel()
 
     var body: some View {
-        VStack(spacing: 20) {
-            kitColorPicker()
-                .padding(.top, 60)
-            kitTitle()
-            gearsList()
+        ScrollView {
+            VStack(spacing: 20) {
+                kitColorPicker()
+                    .padding(.top, 60)
+                kitTitle()
+                gearsList()
+            }
+            .padding(.horizontal, 20)
         }
-        .padding(.horizontal, 20)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 doneButton()
@@ -66,12 +68,10 @@ private extension NewKitView {
     func gearsList() -> some View {
         VStack(alignment: .leading) {
             Text("Gears")
-            ScrollView {
-                ForEach(viewModel.gears) { gear in
-                    LazyVStack {
-                        GearListCellView(gear: gear)
-                        Divider()
-                    }
+            ForEach(viewModel.gears) { gear in
+                LazyVStack {
+                    GearListCellView(gear: gear)
+                    Divider()
                 }
             }
         }

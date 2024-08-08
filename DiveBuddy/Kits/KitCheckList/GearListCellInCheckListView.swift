@@ -33,6 +33,7 @@ struct GearListCellInCheckListView: View {
             .frame(maxWidth: .infinity)
         }
         .roundedCardButton(viewModel.isSelected ? .two : .one)
+        .sensoryFeedback(.success, trigger: viewModel.isSelected)
     }
 }
 

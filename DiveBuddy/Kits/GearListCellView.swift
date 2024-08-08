@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct GearListCellView: View {
+    @ObservedObject private var viewModel = GearListCellViewModel()
     let gear: Gear
 
     var body: some View {
-        Button(action: {}) {
+        Button(action: {
+            viewModel.didTapCell()
+        }) {
             HStack(alignment: .center, spacing: 20) {
-                Image(.noChecked)
+                Image(viewModel.isSelected ? .checked : .noChecked)
                 AsyncImage(url: URL(string: gear.imageURL)) { image in
                     image.resizable()
                 } placeholder: {

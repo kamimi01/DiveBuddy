@@ -33,6 +33,7 @@
 		D4B299052C5EBB2D004D32BB /* DiveBuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B299042C5EBB2D004D32BB /* DiveBuddyUITestsLaunchTests.swift */; };
 		D4C41AE62C643B7700E3C83A /* EmojiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = D4C41AE52C643B7700E3C83A /* EmojiPicker */; };
 		D4CC2E962C646142003EDEDE /* GearListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2E952C646142003EDEDE /* GearListCellView.swift */; };
+		D4CC2E982C6462A7003EDEDE /* GearListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2E972C6462A7003EDEDE /* GearListCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		D4B299022C5EBB2D004D32BB /* DiveBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveBuddyUITests.swift; sourceTree = "<group>"; };
 		D4B299042C5EBB2D004D32BB /* DiveBuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveBuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4CC2E952C646142003EDEDE /* GearListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListCellView.swift; sourceTree = "<group>"; };
+		D4CC2E972C6462A7003EDEDE /* GearListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				D462ADC52C63FDC70054D73A /* NewKitView.swift */,
 				D462ADC72C6422CA0054D73A /* NewKitViewModel.swift */,
 				D4CC2E952C646142003EDEDE /* GearListCellView.swift */,
+				D4CC2E972C6462A7003EDEDE /* GearListCellViewModel.swift */,
 			);
 			path = Kits;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				D40727932C62AFBA0038C5B0 /* View+.swift in Sources */,
 				D40FF43F2C62EFE400585691 /* LoginViewModel.swift in Sources */,
 				D462ADBA2C63E7380054D73A /* TabBarView.swift in Sources */,
+				D4CC2E982C6462A7003EDEDE /* GearListCellViewModel.swift in Sources */,
 				D4B298E82C5EBB2C004D32BB /* DiveBuddyApp.swift in Sources */,
 				D462ADC42C63EFAD0054D73A /* RoundedCardButtonStyle.swift in Sources */,
 			);

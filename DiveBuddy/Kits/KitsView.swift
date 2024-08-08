@@ -53,8 +53,7 @@ private extension KitsView {
                     .foregroundStyle(.primaryWhite)
             }
             .padding()
-            .frame(height: 160)
-            .frame(maxWidth: 150)
+            .roundedCardButtonFrame()
         }
         .roundedCardButton(.two)
     }
@@ -76,8 +75,7 @@ private extension KitsView {
                 .resizable()
                 .frame(width: 25, height: 25)
                 .foregroundStyle(.primaryIconGray)
-                .frame(height: 160)
-                .frame(maxWidth: 150)
+                .roundedCardButtonFrame()
         }
         .roundedCardButton(.one)
     }

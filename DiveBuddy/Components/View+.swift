@@ -22,6 +22,7 @@ extension View {
     }
 
     func roundedCardButtonFrame() -> some View {
-        self.frame(width: 150, height: 160)
+        self.frame(height: 160)
+            .frame(maxWidth: 150)
     }
 }

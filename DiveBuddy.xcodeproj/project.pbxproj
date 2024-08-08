@@ -35,6 +35,9 @@
 		D4CC2E962C646142003EDEDE /* GearListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2E952C646142003EDEDE /* GearListCellView.swift */; };
 		D4CC2E982C6462A7003EDEDE /* GearListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2E972C6462A7003EDEDE /* GearListCellViewModel.swift */; };
 		D4CC2E9C2C64659A003EDEDE /* KitCheckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2E9B2C64659A003EDEDE /* KitCheckListView.swift */; };
+		D4CC2E9E2C646A44003EDEDE /* KitCheckListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2E9D2C646A44003EDEDE /* KitCheckListViewModel.swift */; };
+		D4CC2EA02C646A87003EDEDE /* GearListCellInCheckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2E9F2C646A87003EDEDE /* GearListCellInCheckListView.swift */; };
+		D4CC2EA22C646B62003EDEDE /* GearListCellInCheckListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC2EA12C646B62003EDEDE /* GearListCellInCheckListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		D4CC2E952C646142003EDEDE /* GearListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListCellView.swift; sourceTree = "<group>"; };
 		D4CC2E972C6462A7003EDEDE /* GearListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListCellViewModel.swift; sourceTree = "<group>"; };
 		D4CC2E9B2C64659A003EDEDE /* KitCheckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitCheckListView.swift; sourceTree = "<group>"; };
+		D4CC2E9D2C646A44003EDEDE /* KitCheckListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitCheckListViewModel.swift; sourceTree = "<group>"; };
+		D4CC2E9F2C646A87003EDEDE /* GearListCellInCheckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListCellInCheckListView.swift; sourceTree = "<group>"; };
+		D4CC2EA12C646B62003EDEDE /* GearListCellInCheckListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListCellInCheckListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +273,9 @@
 			isa = PBXGroup;
 			children = (
 				D4CC2E9B2C64659A003EDEDE /* KitCheckListView.swift */,
+				D4CC2E9D2C646A44003EDEDE /* KitCheckListViewModel.swift */,
+				D4CC2E9F2C646A87003EDEDE /* GearListCellInCheckListView.swift */,
+				D4CC2EA12C646B62003EDEDE /* GearListCellInCheckListViewModel.swift */,
 			);
 			path = KitCheckList;
 			sourceTree = "<group>";
@@ -410,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D462ADC82C6422CA0054D73A /* NewKitViewModel.swift in Sources */,
+				D4CC2EA22C646B62003EDEDE /* GearListCellInCheckListViewModel.swift in Sources */,
 				D462ADC62C63FDC70054D73A /* NewKitView.swift in Sources */,
 				D4CC2E9C2C64659A003EDEDE /* KitCheckListView.swift in Sources */,
 				D462ADC22C63E7CE0054D73A /* SettingsView.swift in Sources */,
@@ -423,8 +433,10 @@
 				D40727902C62AEFD0038C5B0 /* RoundedButtonStyle.swift in Sources */,
 				D4B298EA2C5EBB2C004D32BB /* WelcomeView.swift in Sources */,
 				D462ADBF2C63E7B80054D73A /* GearsView.swift in Sources */,
+				D4CC2EA02C646A87003EDEDE /* GearListCellInCheckListView.swift in Sources */,
 				D4CC2E962C646142003EDEDE /* GearListCellView.swift in Sources */,
 				D40727932C62AFBA0038C5B0 /* View+.swift in Sources */,
+				D4CC2E9E2C646A44003EDEDE /* KitCheckListViewModel.swift in Sources */,
 				D40FF43F2C62EFE400585691 /* LoginViewModel.swift in Sources */,
 				D462ADBA2C63E7380054D73A /* TabBarView.swift in Sources */,
 				D4CC2E982C6462A7003EDEDE /* GearListCellViewModel.swift in Sources */,

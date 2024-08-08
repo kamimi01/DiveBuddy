@@ -16,6 +16,8 @@ enum CustomFontSize: CGFloat {
     case three = 17
     /// 13
     case four = 13
+    /// 24
+    case five = 24
 }
 
 extension Font {

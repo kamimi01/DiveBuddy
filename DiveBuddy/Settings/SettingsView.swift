@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @ObservedObject private var viewModel = SettingsViewModel()
     @Environment(\.openURL) var openURL
 
     var body: some View {
@@ -91,7 +92,9 @@ private extension SettingsView {
     }
 
     func logoutButton() -> some View {
-        Button(action: {}) {
+        Button(action: {
+            viewModel.didTapLogoutButton()
+        }) {
             Text("Logout")
                 .font(.customFont(size: .three, weight: .bold))
                 .foregroundStyle(.accentBlue)
@@ -99,6 +102,9 @@ private extension SettingsView {
                 .frame(maxWidth: .infinity)
         }
         .roundedButton(.one)
+        .fullScreenCover(isPresented: $viewModel.isPresentedWelcomeView) {
+            WelcomeView()
+        }
     }
 }
 

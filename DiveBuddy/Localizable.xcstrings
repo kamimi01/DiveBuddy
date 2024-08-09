@@ -39,6 +39,9 @@
         }
       }
     },
+    "Details" : {
+
+    },
     "Do you have account?" : {
 
     },
@@ -83,7 +86,13 @@
         }
       }
     },
+    "Maintenance Date" : {
+
+    },
     "Maintenance History" : {
+
+    },
+    "Maitenance History" : {
 
     },
     "Manage and customize your diving gear sets with ease for various conditions and seasons." : {
@@ -190,6 +199,9 @@
           }
         }
       }
+    },
+    "xxx" : {
+
     },
     "Your email" : {
       "localizations" : {

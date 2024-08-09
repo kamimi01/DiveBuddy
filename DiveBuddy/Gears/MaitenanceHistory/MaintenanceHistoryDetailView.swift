@@ -8,8 +8,70 @@
 import SwiftUI
 
 struct MaintenanceHistoryDetailView: View {
+    @ObservedObject private var viewModel = MaintenanceHistoryDetailViewModel()
+    private let currencies = ["CAD", "USD", "JPY"]
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            maitenanceDate()
+            details()
+            priceView()
+            noteView()
+            Spacer()
+        }
+        .padding(.top, 20
+        )
+        .padding(.horizontal, 20)
+        .navigationTitle("Maitenance History")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+private extension MaintenanceHistoryDetailView {
+    func maitenanceDate() -> some View {
+        VStack(alignment: .leading) {
+            Text("Maintenance Date")
+                .foregroundStyle(.primaryTextBlack)
+            DatePicker("", selection: $viewModel.selectedMaintenanceDate, displayedComponents: [.date])
+                .tint(.primaryTextBlack)
+                .labelsHidden()
+        }
+    }
+
+    func details() -> some View {
+        VStack(alignment: .leading) {
+            Text("Details")
+                .foregroundStyle(.primaryTextBlack)
+            TextField("xxx", text: $viewModel.detailsInput, axis: .vertical)
+                .roundedTextField()
+        }
+    }
+
+    func priceView() -> some View {
+        VStack(alignment: .leading) {
+            Text("Price")
+                .foregroundStyle(.primaryTextBlack)
+            HStack {
+                Picker("", selection: $viewModel.selectedCurrency) {
+                    ForEach(currencies, id: \.self) {
+                        Text($0)
+                    }
+                }
+                .pickerStyle(.menu)
+                .tint(.primaryTextBlack)
+                TextField("100", text: $viewModel.priceInput)
+                    .roundedTextField()
+            }
+        }
+    }
+
+    func noteView() -> some View {
+        VStack(alignment: .leading) {
+            Text("Note")
+                .foregroundStyle(.primaryTextBlack)
+            TextField("Changed the O-rings on the regulator", text: $viewModel.noteInput, axis: .vertical)
+                .roundedTextField()
+        }
     }
 }
 

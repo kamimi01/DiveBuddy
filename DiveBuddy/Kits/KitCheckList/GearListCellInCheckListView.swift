@@ -37,6 +37,7 @@ struct GearListCellInCheckListView: View {
                         .resizable()
                         .frame(width: 20, height: 20)
                         .foregroundStyle(viewModel.isSelected ? .primaryWhite : .primaryIconGray)
+                        .padding(10)
                 }
             }
             .padding()

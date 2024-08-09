@@ -9,6 +9,7 @@ import SwiftUI
 
 struct KitCheckListView: View {
     @ObservedObject private var viewModel = KitCheckListViewModel()
+    @Binding var navigationPath: [NavigationPath]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 40) {
@@ -44,7 +45,7 @@ private extension KitCheckListView {
         ScrollView {
             LazyVStack(spacing: 25) {
                 ForEach(viewModel.gears) { gear in
-                    GearListCellInCheckListView(gear: gear)
+                    GearListCellInCheckListView(gear: gear, navigationPath: $navigationPath)
                 }
             }
         }
@@ -64,5 +65,5 @@ private extension KitCheckListView {
 }
 
 #Preview {
-    KitCheckListView()
+    KitCheckListView(navigationPath: .constant([.toGearDetailView]))
 }

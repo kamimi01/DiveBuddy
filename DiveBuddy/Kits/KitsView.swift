@@ -34,7 +34,9 @@ struct KitsView: View {
             .navigationDestination(for: NavigationPath.self) { path in
                 switch path {
                 case .toNewKitView:       NewKitView()
-                case .toKitCheckListView: KitCheckListView()
+                case .toKitCheckListView: KitCheckListView(navigationPath: $navigationPath)
+                case .toGearDetailView:
+                    GearDetailView(navigationPath: $navigationPath)
                 default:
                     EmptyView()
                 }

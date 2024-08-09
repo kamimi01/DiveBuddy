@@ -10,6 +10,7 @@ import SwiftUI
 struct GearListCellInCheckListView: View {
     @ObservedObject private var viewModel = GearListCellInCheckListViewModel()
     let gear: Gear
+    @Binding var navigationPath: [NavigationPath]
 
     var body: some View {
         Button(action: {
@@ -32,7 +33,9 @@ struct GearListCellInCheckListView: View {
                         .font(.customFont(size: .four))
                 }
                 Spacer()
-                Button(action: {}) {
+                Button(action: {
+                    navigationPath.append(.toGearDetailView)
+                }) {
                     Image(systemName: "info.circle")
                         .resizable()
                         .frame(width: 20, height: 20)
@@ -50,5 +53,8 @@ struct GearListCellInCheckListView: View {
 }
 
 #Preview {
-    GearListCellInCheckListView(gear: Gear(name: "BCD", imageURL: "https://picsum.photos/200", brand: "TUSA"))
+    GearListCellInCheckListView(
+        gear: Gear(name: "BCD", imageURL: "https://picsum.photos/200", brand: "TUSA"),
+        navigationPath: .constant([.toNewKitView])
+    )
 }

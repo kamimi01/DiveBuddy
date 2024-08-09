@@ -11,6 +11,7 @@ enum NavigationPath {
     case toNewKitView
     case toKitCheckListView
     case toGearDetailView
+    case toMaintenanceHistoryDetailView
 }
 
 struct KitsView: View {

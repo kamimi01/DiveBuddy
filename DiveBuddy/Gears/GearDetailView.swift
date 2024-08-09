@@ -10,6 +10,7 @@ import SwiftUI
 struct GearDetailView: View {
     @ObservedObject private var viewModel = GearDetailViewModel()
     private let currencies = ["CAD", "USD", "JPY"]
+    @Binding var navigationPath: [NavigationPath]
 
     var body: some View {
         ScrollView {
@@ -103,7 +104,9 @@ private extension GearDetailView {
                 .frame(maxWidth: .infinity, alignment: .leading)
             ForEach(viewModel.maitenanceHistories) { history in
                 VStack {
-                    Button(action: {}) {
+                    Button(action: {
+                        navigationPath.append(.toMaintenanceHistoryDetailView)
+                    }) {
                         HStack {
                             Text(history.date.description)
                             Spacer()
@@ -131,5 +134,5 @@ private extension GearDetailView {
 }
 
 #Preview {
-    GearDetailView()
+    GearDetailView(navigationPath: .constant([.toNewKitView]))
 }

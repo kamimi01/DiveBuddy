@@ -23,8 +23,12 @@ struct GearsView: View {
             .padding(.horizontal, 20)
             .navigationTitle("Gears")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: NavigationPath.self) { _ in
-                GearDetailView()
+            .navigationDestination(for: NavigationPath.self) { path in
+                switch path {
+                case .toGearDetailView: GearDetailView(navigationPath: $navigationPath)
+                case .toMaintenanceHistoryDetailView: MaintenanceHistoryDetailView()
+                default: EmptyView()
+                }
             }
         }
     }

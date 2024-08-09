@@ -4,6 +4,16 @@
     "" : {
 
     },
+    "%@(%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@(%2$@)"
+          }
+        }
+      }
+    },
     "%lld %@" : {
       "localizations" : {
         "en" : {
@@ -15,6 +25,9 @@
       }
     },
     "100" : {
+
+    },
+    "About App" : {
 
     },
     "BCD" : {
@@ -64,10 +77,13 @@
     "Gears" : {
 
     },
-    "Hello, World!" : {
+    "Guest" : {
 
     },
     "Kits" : {
+
+    },
+    "Know Developer" : {
 
     },
     "Let’s register your gear" : {
@@ -85,6 +101,9 @@
           }
         }
       }
+    },
+    "Logout" : {
+
     },
     "Maintenance Date" : {
 
@@ -140,6 +159,9 @@
     "Price" : {
 
     },
+    "Privacy Policy" : {
+
+    },
     "Purchase Date" : {
 
     },
@@ -175,6 +197,12 @@
     "Summar" : {
 
     },
+    "Support" : {
+
+    },
+    "Terms of User" : {
+
+    },
     "ThirdParyLogin: Facebook (will be replaced with FirebaseUI)" : {
 
     },
@@ -188,6 +216,9 @@
 
     },
     "TUSA" : {
+
+    },
+    "Version" : {
 
     },
     "Welcome" : {

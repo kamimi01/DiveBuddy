@@ -16,6 +16,7 @@ struct GearListCellInCheckListView: View {
             viewModel.didTapCell()
         }) {
             HStack(spacing: 20) {
+                Image(viewModel.isSelected ? .checked : .noChecked)
                 AsyncImage(url: URL(string: gear.imageURL)) { image in
                     image.resizable()
                 } placeholder: {
@@ -31,7 +32,12 @@ struct GearListCellInCheckListView: View {
                         .font(.customFont(size: .four))
                 }
                 Spacer()
-                Image(viewModel.isSelected ? .checked : .noChecked)
+                Button(action: {}) {
+                    Image(systemName: "info.circle")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundStyle(viewModel.isSelected ? .primaryWhite : .primaryIconGray)
+                }
             }
             .padding()
             .frame(height: 110)

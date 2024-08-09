@@ -64,7 +64,7 @@ private extension GearsView {
 
     func addGearCardButton() -> some View {
         Button(action: {
-            navigationPath.append(.toNewKitView)
+            navigationPath.append(.toGearDetailView)
         }) {
             Image(systemName: "plus")
                 .resizable()

@@ -37,8 +37,8 @@ struct KitsView: View {
                 case .toKitCheckListView: KitCheckListView(navigationPath: $navigationPath)
                 case .toGearDetailView:
                     GearDetailView(navigationPath: $navigationPath)
-                default:
-                    EmptyView()
+                case .toMaintenanceHistoryDetailView:
+                    MaintenanceHistoryDetailView()
                 }
             }
         }

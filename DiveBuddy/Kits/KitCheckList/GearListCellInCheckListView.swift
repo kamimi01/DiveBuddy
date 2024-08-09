@@ -10,7 +10,7 @@ import SwiftUI
 struct GearListCellInCheckListView: View {
     @ObservedObject private var viewModel = GearListCellInCheckListViewModel()
     let gear: Gear
-    @Binding var navigationPath: [NavigationPath]
+    @Binding var navigationPath: [CustomNavigationPath]
 
     var body: some View {
         Button(action: {

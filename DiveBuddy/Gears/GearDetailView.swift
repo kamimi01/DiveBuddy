@@ -10,7 +10,7 @@ import SwiftUI
 struct GearDetailView: View {
     @ObservedObject private var viewModel = GearDetailViewModel()
     private let currencies = ["CAD", "USD", "JPY"]
-    @Binding var navigationPath: [NavigationPath]
+    @Binding var navigationPath: [CustomNavigationPath]
 
     var body: some View {
         ScrollView {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GearsView: View {
-    @State private var navigationPath: [NavigationPath] = []
+    @State private var navigationPath: [CustomNavigationPath] = []
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
 
     var body: some View {
@@ -23,7 +23,7 @@ struct GearsView: View {
             .padding(.horizontal, 20)
             .navigationTitle("Gears")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: NavigationPath.self) { path in
+            .navigationDestination(for: CustomNavigationPath.self) { path in
                 switch path {
                 case .toGearDetailView: GearDetailView(navigationPath: $navigationPath)
                 case .toMaintenanceHistoryDetailView: MaintenanceHistoryDetailView()

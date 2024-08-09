@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum NavigationPath {
+enum CustomNavigationPath {
     case toNewKitView
     case toKitCheckListView
     case toGearDetailView
@@ -15,7 +15,7 @@ enum NavigationPath {
 }
 
 struct KitsView: View {
-    @State private var navigationPath: [NavigationPath] = []
+    @State private var navigationPath: [CustomNavigationPath] = []
 
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
 
@@ -31,9 +31,10 @@ struct KitsView: View {
             .padding(.horizontal, 20)
             .navigationTitle("Kits")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: NavigationPath.self) { path in
+            .navigationDestination(for: CustomNavigationPath.self) { path in
                 switch path {
-                case .toNewKitView:       NewKitView()
+                case .toNewKitView:
+                    NewKitView()
                 case .toKitCheckListView: KitCheckListView(navigationPath: $navigationPath)
                 case .toGearDetailView:
                     GearDetailView(navigationPath: $navigationPath)

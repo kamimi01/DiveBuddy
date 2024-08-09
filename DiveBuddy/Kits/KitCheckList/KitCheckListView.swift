@@ -9,7 +9,7 @@ import SwiftUI
 
 struct KitCheckListView: View {
     @ObservedObject private var viewModel = KitCheckListViewModel()
-    @Binding var navigationPath: [NavigationPath]
+    @Binding var navigationPath: [CustomNavigationPath]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 40) {

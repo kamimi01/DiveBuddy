@@ -12,31 +12,35 @@ struct SettingsView: View {
     @Environment(\.openURL) var openURL
 
     var body: some View {
-        VStack(alignment: .leading) {
-            profile()
-                .padding(.horizontal, 20)
-            List {
-                Section(header: Text("Support")) {
-                    feedback()
-                    knowDeveloper()
-                }
+        NavigationStack {
+            VStack(alignment: .leading) {
+                profile()
+                    .padding(.horizontal, 20)
+                List {
+                    Section(header: Text("Support")) {
+                        feedback()
+                        knowDeveloper()
+                    }
 
-                Section(header: Text("About App")) {
-                    termsOfUse()
-                    privacyPolicy()
-                    version()
+                    Section(header: Text("About App")) {
+                        termsOfUse()
+                        privacyPolicy()
+                        version()
+                    }
                 }
+                .listStyle(.plain)
+                .frame(maxHeight: 350)
+                logoutButton()
+                Spacer()
             }
-            .listStyle(.plain)
-            .frame(maxHeight: 350)
-            logoutButton()
-            Spacer()
-        }
-        .padding(.top, 20)
-        .alert(viewModel.errorMessage, isPresented: $viewModel.isPresentedErrorAlert) {
-            Button("OK", role: .cancel, action: {
-                viewModel.didTapOKInErrorAlert()
-            })
+            .padding(.top, 20)
+            .alert(viewModel.errorMessage, isPresented: $viewModel.isPresentedErrorAlert) {
+                Button("OK", role: .cancel, action: {
+                    viewModel.didTapOKInErrorAlert()
+                })
+            }
+            .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

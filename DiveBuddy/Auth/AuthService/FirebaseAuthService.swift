@@ -22,4 +22,8 @@ struct FirebaseAuthService {
     func logout() throws {
         return try firebaseAuth.signOut()
     }
+
+    func guestLogin() async throws -> AuthDataResult {
+        return try await firebaseAuth.signInAnonymously()
+    }
 }

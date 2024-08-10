@@ -24,6 +24,11 @@ struct WelcomeView: View {
                     .padding(.bottom, 50)
             }
             .padding(.horizontal, 20)
+            .alert(viewModel.errorMessage, isPresented: $viewModel.isPresentedErrorAlert) {
+                Button("OK", role: .cancel, action: {
+                    viewModel.didTapOKInErrorAlert()
+                })
+            }
         }
     }
 }
@@ -81,10 +86,15 @@ private extension WelcomeView {
     }
 
     func guestLoginButton() -> some View {
-        Button(action: {}) {
+        Button(action: {
+            viewModel.didTapGuestLoginButton()
+        }) {
             Text("Continue as Guest")
                 .font(.customFont(size: .two, weight: .bold))
                 .foregroundStyle(.primaryWhite)
+        }
+        .fullScreenCover(isPresented: $viewModel.isPresentedTabbarView) {
+            TabBarView()
         }
     }
 }

@@ -17,6 +17,11 @@ enum AuthState {
     case loggedOut
 }
 
+enum AuthError: Error {
+    /// Unexpected Error
+    case unexpected
+}
+
 final class AuthManager: ObservableObject {
     @Published var user: User?
     @Published var authState = AuthState.loggedOut
@@ -50,6 +55,22 @@ final class AuthManager: ObservableObject {
 
     func signup(email: String, password: String) async throws -> AuthDataResult {
         return try await firebaseAuth.createUser(withEmail: email, password: password)
+    }
+
+    func signupForAnonymousUser(email: String, password: String) async throws -> AuthDataResult {
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+        return try await withCheckedThrowingContinuation { continuation in
+            user?.link(with: credential) { authResult, error in
+                if let error = error {
+                    continuation.resume(throwing: error)
+                }
+                if let authResult = authResult {
+                    continuation.resume(returning: authResult)
+                } else {
+                    continuation.resume(throwing: AuthError.unexpected)
+                }
+            }
+        }
     }
 
     func login(email: String, password: String) async throws -> AuthDataResult {

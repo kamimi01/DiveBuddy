@@ -30,7 +30,11 @@ struct SettingsView: View {
                 }
                 .listStyle(.plain)
                 .frame(maxHeight: 350)
-                logoutButton()
+                if viewModel.isAnonymous() {
+                    signupButton()
+                } else {
+                    logoutButton()
+                }
                 Spacer()
             }
             .padding(.top, 20)
@@ -142,6 +146,22 @@ private extension SettingsView {
         }
         .fullScreenCover(isPresented: $viewModel.isPresentedWelcomeView) {
             WelcomeView()
+        }
+    }
+
+    func signupButton() -> some View {
+        Button(action: {
+            viewModel.didTapSingupButton()
+        }) {
+            Text("Sign up")
+                .font(.customFont(size: .three, weight: .bold))
+                .foregroundStyle(.accentBlue)
+                .padding(.vertical, 11)
+                .frame(maxWidth: .infinity)
+        }
+        .roundedButton(.one)
+        .fullScreenCover(isPresented: $viewModel.isPresentedSignupView) {
+            SignupView()
         }
     }
 }

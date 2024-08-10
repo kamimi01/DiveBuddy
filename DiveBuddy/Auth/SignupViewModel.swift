@@ -35,16 +35,38 @@ final class SignupViewModel: ObservableObject {
         Task { [weak self] in
             guard let self else { return }
 
-            do {
-                let authResult = try await self.authService.signup(email: emailInput, password: passwordInput)
-                await MainActor.run {
-                    self.isPresentedTabBarView = true
-                }
-            } catch {
-                await MainActor.run {
-                    self.errorMessage += error.localizedDescription
-                    self.isPresentedErrorAlert = true
-                }
+            if authService.authState == .authenticated {
+                await signupForAnonymousUser(email: emailInput, password: passwordInput)
+            } else {
+                await signupForNewUser(email: emailInput, password: passwordInput)
+            }
+        }
+    }
+
+    private func signupForAnonymousUser(email: String, password: String) async {
+        do {
+            let authResult = try await self.authService.signupForAnonymousUser(email: emailInput, password: passwordInput)
+            await MainActor.run {
+                self.isPresentedTabBarView = true
+            }
+        } catch {
+            await MainActor.run {
+                self.errorMessage += error.localizedDescription
+                self.isPresentedErrorAlert = true
+            }
+        }
+    }
+
+    private func signupForNewUser(email: String, password: String) async {
+        do {
+            let authResult = try await self.authService.signup(email: emailInput, password: passwordInput)
+            await MainActor.run {
+                self.isPresentedTabBarView = true
+            }
+        } catch {
+            await MainActor.run {
+                self.errorMessage += error.localizedDescription
+                self.isPresentedErrorAlert = true
             }
         }
     }

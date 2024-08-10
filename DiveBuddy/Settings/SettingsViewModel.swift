@@ -12,6 +12,7 @@ final class SettingsViewModel: ObservableObject {
     @Published var isPresentedErrorAlert = false
     @Published var isPresentedLogoutConfirmAlert = false
     @Published var errorMessage = ""
+    @Published var isPresentedSignupView = false
 
     private let authService: AuthManager
 
@@ -39,7 +40,15 @@ final class SettingsViewModel: ObservableObject {
         }
     }
 
+    func isAnonymous() -> Bool {
+        return authService.authState == .authenticated
+    }
+
     func didTapOKInErrorAlert() {
         errorMessage = ""
+    }
+
+    func didTapSingupButton() {
+        isPresentedSignupView = true
     }
 }

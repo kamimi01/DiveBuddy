@@ -13,6 +13,7 @@ struct AuthRouterView: View {
     var body: some View {
         if authManager.authState != .loggedOut {
             TabBarView()
+                .environmentObject(authManager)
         } else {
             WelcomeView()
         }

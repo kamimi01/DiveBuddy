@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var authManager: AuthManager
     @ObservedObject private var viewModel = SettingsViewModel()
     @Environment(\.openURL) var openURL
 
@@ -51,7 +52,7 @@ struct SettingsView: View {
 
 private extension SettingsView {
     func profile() -> some View {
-        Text("Guest")
+        Text(authManager.username())
             .foregroundStyle(.primaryTextBlack)
             .font(.customFont(size: .five, weight: .bold))
     }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TabBarView: View {
+    @EnvironmentObject var authManager: AuthManager
+
     var body: some View {
         TabView {
            KitsView()
@@ -19,6 +21,7 @@ struct TabBarView: View {
                     Label("Gears", systemImage: "wrench.adjustable.fill")
                 }
            SettingsView()
+                .environmentObject(authManager)
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
                 }

@@ -85,4 +85,13 @@ final class AuthManager: ObservableObject {
         return try await firebaseAuth.signInAnonymously()
     }
 
+    func username() -> String {
+        let isAnonymous = user?.isAnonymous ?? false
+        if isAnonymous {
+            return "Guest"
+        } else {
+            return user?.email ?? "N/A"
+        }
+    }
+
 }

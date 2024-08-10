@@ -53,6 +53,24 @@ final class LoginViewModel: ObservableObject {
         errorMessage = ""
     }
 
+    func didTapGuestLoginButton() {
+        Task { [weak self] in
+            guard let self else { return }
+
+            do {
+                let authResult = try await self.authService.guestLogin()
+                await MainActor.run {
+                    self.isPresentedTabBarView = true
+                }
+            } catch {
+                await MainActor.run {
+                    self.errorMessage += error.localizedDescription
+                    self.isPresentedErrorAlert = true
+                }
+            }
+        }
+    }
+
     /// FIXME: wanna delete this method cuz it's completely same as the one in SignupViewModel
     private func isValidUserInfo(email: String, password: String) -> Bool {
         if !isValidEmail(email) {

@@ -17,8 +17,9 @@ struct LoginView: View {
             emailPassInput()
                 .padding(.top, 20)
             logInButton()
+            guestLogin()
             Spacer()
-            thirdPartyLoginView()
+//            thirdPartyLoginView()
         }
         .padding(.horizontal, 20)
         .alert(viewModel.errorMessage, isPresented: $viewModel.isPresentedErrorAlert) {
@@ -82,6 +83,20 @@ private extension LoginView {
                     SignupView()
                 }
             }
+        }
+    }
+
+    func guestLogin() -> some View {
+        Button(action: {
+            viewModel.didTapGuestLoginButton()
+        }) {
+            Text("Continue as Guest")
+                .font(.customFont(size: .two, weight: .bold))
+                .foregroundStyle(.accentBlue)
+                .frame(maxWidth: .infinity)
+        }
+        .fullScreenCover(isPresented: $viewModel.isPresentedTabBarView) {
+            TabBarView()
         }
     }
 

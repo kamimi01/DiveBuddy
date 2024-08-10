@@ -53,6 +53,24 @@ final class SignupViewModel: ObservableObject {
         errorMessage = ""
     }
 
+    func didTapGuestLoginButton() {
+        Task { [weak self] in
+            guard let self else { return }
+
+            do {
+                let authResult = try await self.authService.guestLogin()
+                await MainActor.run {
+                    self.isPresentedTabBarView = true
+                }
+            } catch {
+                await MainActor.run {
+                    self.errorMessage += error.localizedDescription
+                    self.isPresentedErrorAlert = true
+                }
+            }
+        }
+    }
+
     private func isValidUserInfo(email: String, password: String) -> Bool {
         if !isValidEmail(email) {
             errorMessage += String(localized: "Please enter a valid email address.") + "\n"

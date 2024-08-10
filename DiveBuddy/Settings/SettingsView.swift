@@ -32,6 +32,11 @@ struct SettingsView: View {
             Spacer()
         }
         .padding(.top, 20)
+        .alert(viewModel.errorMessage, isPresented: $viewModel.isPresentedErrorAlert) {
+            Button("OK", role: .cancel, action: {
+                viewModel.didTapOKInErrorAlert()
+            })
+        }
     }
 }
 

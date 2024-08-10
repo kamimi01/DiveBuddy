@@ -133,6 +133,9 @@
     "Note" : {
 
     },
+    "OK" : {
+
+    },
     "Or log in with" : {
       "localizations" : {
         "ja" : {
@@ -155,6 +158,12 @@
           }
         }
       }
+    },
+    "Please enter a password with at least %lld characters." : {
+
+    },
+    "Please enter a valid email address." : {
+
     },
     "Price" : {
 

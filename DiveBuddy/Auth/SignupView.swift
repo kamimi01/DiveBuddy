@@ -21,6 +21,11 @@ struct SignupView: View {
             thirdPartyLoginView()
         }
         .padding(.horizontal, 20)
+        .alert(viewModel.errorMessage, isPresented: $viewModel.isPresentedErrorAlert) {
+            Button("OK", role: .cancel, action: {
+                viewModel.didTapOKInErrorAlert()
+            })
+        }
     }
 }
 

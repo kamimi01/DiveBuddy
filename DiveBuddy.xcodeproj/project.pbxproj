@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4009C922C67FF66009E689D /* AuthRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4009C912C67FF66009E689D /* AuthRouterView.swift */; };
+		D4009C942C67FFC0009E689D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4009C932C67FFC0009E689D /* AuthManager.swift */; };
 		D407278D2C62AA9B0038C5B0 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D407278C2C62AA9B0038C5B0 /* Font+.swift */; };
 		D40727902C62AEFD0038C5B0 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D407278F2C62AEFD0038C5B0 /* RoundedButtonStyle.swift */; };
 		D40727932C62AFBA0038C5B0 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40727922C62AFBA0038C5B0 /* View+.swift */; };
@@ -72,6 +74,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4009C912C67FF66009E689D /* AuthRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouterView.swift; sourceTree = "<group>"; };
+		D4009C932C67FFC0009E689D /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		D407278C2C62AA9B0038C5B0 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		D407278F2C62AEFD0038C5B0 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
 		D40727922C62AFBA0038C5B0 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "View+.swift"; path = "DiveBuddy/Components/View+.swift"; sourceTree = SOURCE_ROOT; };
@@ -170,11 +174,14 @@
 		D40FF4332C62C3C700585691 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				D4009C912C67FF66009E689D /* AuthRouterView.swift */,
+				D41F51692C62A8D900BEEC1D /* Welcome */,
 				D463751B2C66E2D600EE45D1 /* AuthService */,
 				D40FF4362C62CBF800585691 /* LoginView.swift */,
 				D40FF43C2C62EFA700585691 /* SignupView.swift */,
 				D40FF43E2C62EFE400585691 /* LoginViewModel.swift */,
 				D462ADB52C63E5660054D73A /* SignupViewModel.swift */,
+				D4009C932C67FFC0009E689D /* AuthManager.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -268,7 +275,6 @@
 			isa = PBXGroup;
 			children = (
 				D463750E2C66DF0000EE45D1 /* GoogleService-Info.plist */,
-				D41F51692C62A8D900BEEC1D /* Welcome */,
 				D40FF4332C62C3C700585691 /* Auth */,
 				D462ADB82C63E7280054D73A /* TabBar */,
 				D462ADB72C63E6DF0054D73A /* Kits */,
@@ -493,8 +499,10 @@
 				D4CC2EAC2C6548A9003EDEDE /* GearDetailViewModel.swift in Sources */,
 				D462ADBD2C63E7A40054D73A /* KitsView.swift in Sources */,
 				D40FF4392C62CECE00585691 /* RoundedTextFieldStyle.swift in Sources */,
+				D4009C942C67FFC0009E689D /* AuthManager.swift in Sources */,
 				D4CC2EA82C653E4D003EDEDE /* GearListCellInGearsView.swift in Sources */,
 				D462ADB62C63E5660054D73A /* SignupViewModel.swift in Sources */,
+				D4009C922C67FF66009E689D /* AuthRouterView.swift in Sources */,
 				D40727902C62AEFD0038C5B0 /* RoundedButtonStyle.swift in Sources */,
 				D4B298EA2C5EBB2C004D32BB /* WelcomeView.swift in Sources */,
 				D462ADBF2C63E7B80054D73A /* GearsView.swift in Sources */,

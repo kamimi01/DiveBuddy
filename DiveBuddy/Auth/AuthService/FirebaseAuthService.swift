@@ -11,6 +11,10 @@ import FirebaseAuth
 struct FirebaseAuthService {
     private let firebaseAuth = Auth.auth()
 
+    func currentUser() -> User? {
+        return firebaseAuth.currentUser
+    }
+
     func signup(email: String, password: String) async throws -> AuthDataResult {
         return try await firebaseAuth.createUser(withEmail: email, password: password)
     }

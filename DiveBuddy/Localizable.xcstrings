@@ -30,10 +30,16 @@
     "About App" : {
 
     },
+    "Are you sure you want to log out?" : {
+
+    },
     "BCD" : {
 
     },
     "Brand" : {
+
+    },
+    "Cancel" : {
 
     },
     "Change emoji" : {
@@ -241,6 +247,9 @@
       }
     },
     "xxx" : {
+
+    },
+    "Yes" : {
 
     },
     "Your email" : {

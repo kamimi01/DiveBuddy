@@ -107,6 +107,12 @@ private extension SettingsView {
                 .frame(maxWidth: .infinity)
         }
         .roundedButton(.one)
+        .alert("Are you sure you want to log out?", isPresented: $viewModel.isPresentedLogoutConfirmAlert) {
+            Button("Cancel", role: .cancel) {}
+            Button("Yes", role: .destructive) {
+                viewModel.didTapLogoutYesButton()
+            }
+        }
         .fullScreenCover(isPresented: $viewModel.isPresentedWelcomeView) {
             WelcomeView()
         }

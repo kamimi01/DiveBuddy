@@ -10,6 +10,7 @@ import Foundation
 final class SettingsViewModel: ObservableObject {
     @Published var isPresentedWelcomeView = false
     @Published var isPresentedErrorAlert = false
+    @Published var isPresentedLogoutConfirmAlert = false
     @Published var errorMessage = ""
 
     private let authService: FirebaseAuthService
@@ -19,6 +20,10 @@ final class SettingsViewModel: ObservableObject {
     }
 
     func didTapLogoutButton() {
+        isPresentedLogoutConfirmAlert = true
+    }
+
+    func didTapLogoutYesButton() {
         Task {
             do {
                 try self.authService.logout()

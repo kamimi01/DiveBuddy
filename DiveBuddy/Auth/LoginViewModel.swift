@@ -15,11 +15,11 @@ final class LoginViewModel: ObservableObject {
     @Published var isPresentedErrorAlert = false
     @Published var errorMessage = ""
 
-    private let authService: FirebaseAuthService
+    private let authService: AuthManager
     private let minNumOfPasword = 8
 
     init() {
-        authService = FirebaseAuthService()
+        authService = AuthManager()
     }
 
     func didTapSignupButton() {

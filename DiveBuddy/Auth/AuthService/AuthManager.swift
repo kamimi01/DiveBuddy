@@ -21,6 +21,7 @@ final class AuthManager: ObservableObject {
     @Published var user: User?
     @Published var authState = AuthState.loggedOut
 
+    private let firebaseAuth = Auth.auth()
     private var authStateHandle: AuthStateDidChangeListenerHandle!
 
     init() {
@@ -46,4 +47,21 @@ final class AuthManager: ObservableObject {
             authState = .loggedOut
         }
     }
+
+    func signup(email: String, password: String) async throws -> AuthDataResult {
+        return try await firebaseAuth.createUser(withEmail: email, password: password)
+    }
+
+    func login(email: String, password: String) async throws -> AuthDataResult {
+        return try await firebaseAuth.signIn(withEmail: email, password: password)
+    }
+
+    func logout() throws {
+        return try firebaseAuth.signOut()
+    }
+
+    func guestLogin() async throws -> AuthDataResult {
+        return try await firebaseAuth.signInAnonymously()
+    }
+
 }

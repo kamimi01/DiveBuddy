@@ -14,10 +14,10 @@ final class WelcomeViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var isPresentedErrorAlert = false
 
-    private let authService: FirebaseAuthService
+    private let authService: AuthManager
 
     init() {
-        authService = FirebaseAuthService()
+        authService = AuthManager()
     }
 
     func didTapRegisterButton() {

@@ -13,10 +13,10 @@ final class SettingsViewModel: ObservableObject {
     @Published var isPresentedLogoutConfirmAlert = false
     @Published var errorMessage = ""
 
-    private let authService: FirebaseAuthService
+    private let authService: AuthManager
 
     init() {
-        authService = FirebaseAuthService()
+        authService = AuthManager()
     }
 
     func didTapLogoutButton() {

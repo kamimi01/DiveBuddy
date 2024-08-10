@@ -17,6 +17,7 @@ struct SettingsView: View {
                 .padding(.horizontal, 20)
             List {
                 Section(header: Text("Support")) {
+                    feedback()
                     knowDeveloper()
                 }
 
@@ -27,7 +28,7 @@ struct SettingsView: View {
                 }
             }
             .listStyle(.plain)
-            .frame(maxHeight: 300)
+            .frame(maxHeight: 350)
             logoutButton()
             Spacer()
         }
@@ -45,6 +46,18 @@ private extension SettingsView {
         Text("Guest")
             .foregroundStyle(.primaryTextBlack)
             .font(.customFont(size: .five, weight: .bold))
+    }
+
+    func feedback() -> some View {
+        Button(action:{
+            openURL(URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfhAmIFNhwKtieq7aoUZnuxWWr8QDuah8L6KTCS5KKueS34cg/viewform?usp=sf_link")!)
+        }) {
+            HStack {
+                Text("Feedback")
+                Spacer()
+            }
+        }
+        .foregroundStyle(.primaryTextBlack)
     }
 
     func termsOfUse() -> some View {

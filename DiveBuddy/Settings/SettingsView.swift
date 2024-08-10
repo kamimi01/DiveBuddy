@@ -57,6 +57,9 @@ private extension SettingsView {
             openURL(URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfhAmIFNhwKtieq7aoUZnuxWWr8QDuah8L6KTCS5KKueS34cg/viewform?usp=sf_link")!)
         }) {
             HStack {
+                Image(systemName: "questionmark.circle")
+                    .resizable()
+                    .frame(width: 20, height: 20)
                 Text("Feedback")
                 Spacer()
             }
@@ -69,6 +72,9 @@ private extension SettingsView {
             openURL(URL(string: "https://github.com/kamimi01")!)
         }) {
             HStack {
+                Image(systemName: "note.text")
+                    .resizable()
+                    .frame(width: 20, height: 20)
                 Text("Terms of User")
                 Spacer()
             }
@@ -81,6 +87,9 @@ private extension SettingsView {
             openURL(URL(string: "https://github.com/kamimi01")!)
         }) {
             HStack {
+                Image(systemName: "lock.shield")
+                    .resizable()
+                    .frame(width: 20, height: 20)
                 Text("Privacy Policy")
                 Spacer()
             }
@@ -93,6 +102,7 @@ private extension SettingsView {
             openURL(URL(string: "https://github.com/kamimi01")!)
         }) {
             HStack {
+                Image(systemName: "wrench.and.screwdriver")
                 Text("Know Developer")
                 Spacer()
             }

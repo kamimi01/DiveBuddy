@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct GearDetailView: View {
     @EnvironmentObject var authManager: AuthManager
@@ -32,11 +33,19 @@ struct GearDetailView: View {
 
 private extension GearDetailView {
     func gearImageView() -> some View {
-        Button(action: {}) {
+        PhotosPicker(selection: $viewModel.selectedImage) {
             ZStack {
-                Circle()
-                    .fill(.secondaryBgGray)
-                    .frame(width: 100, height: 100)
+                if let image = viewModel.selectedImage,
+                   let uiImage = UIImage(data: viewModel.selectedImageData) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .clipShape(.rect(cornerRadius: 70))
+                } else {
+                    Circle()
+                        .fill(.secondaryBgGray)
+                        .frame(width: 100, height: 100)
+                }
                 Image(systemName: "square.and.pencil")
                     .resizable()
                     .frame(width: 25, height: 25)

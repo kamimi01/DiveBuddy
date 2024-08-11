@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import PhotosUI
+import _PhotosUI_SwiftUI
 
 struct MaintenanceHistory: Identifiable {
     let id: String
@@ -24,6 +26,19 @@ final class GearDetailViewModel: ObservableObject {
     @Published var priceInput = ""
     @Published var selectedPurchaseDate = Date()
     @Published var noteInput = ""
+    @Published var selectedImage: PhotosPickerItem? {
+        didSet {
+            Task {
+                guard let data = try await selectedImage?.loadTransferable(type: Data.self) else {
+                    return
+                }
+                await MainActor.run {
+                    selectedImageData = data
+                }
+            }
+        }
+    }
+    @Published var selectedImageData = Data()
 
     private var databaseManager: DatabaseManager?
 
@@ -67,7 +82,7 @@ final class GearDetailViewModel: ObservableObject {
             return
         }
 
-        let gear = Gear(id: "", name: nameInput, imageData: Data(), brandName: brandInput, price: Double(priceInput) ?? 0, currency: Currency(rawValue: selectedCurrency) ?? .none, purchaseDate: selectedPurchaseDate, maintenanceHistories: [MaintenanceHistory(id: "maitenanceID1", gearID: "", date: Date(), details: "", currency: Currency.jpy.rawValue, price: 0, note: "")], note: noteInput)
+        let gear = Gear(id: "", name: nameInput, imageData: selectedImageData, brandName: brandInput, price: Double(priceInput) ?? 0, currency: Currency(rawValue: selectedCurrency) ?? .none, purchaseDate: selectedPurchaseDate, maintenanceHistories: [MaintenanceHistory(id: "maitenanceID1", gearID: "", date: Date(), details: "", currency: Currency.jpy.rawValue, price: 0, note: "")], note: noteInput)
 
         Task {
             await databaseManager?.create(uid: uid, gear: gear)

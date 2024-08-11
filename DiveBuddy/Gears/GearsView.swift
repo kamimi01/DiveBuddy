@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GearsView: View {
+    @EnvironmentObject var authManager: AuthManager
     @State private var navigationPath: [CustomNavigationPath] = []
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
 
@@ -26,6 +27,7 @@ struct GearsView: View {
             .navigationDestination(for: CustomNavigationPath.self) { path in
                 switch path {
                 case .toGearDetailView: GearDetailView(navigationPath: $navigationPath)
+                        .environmentObject(authManager)
                 case .toMaintenanceHistoryDetailView: MaintenanceHistoryDetailView()
                 default: EmptyView()
                 }

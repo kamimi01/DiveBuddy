@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GearDetailView: View {
+    @EnvironmentObject var authManager: AuthManager
     @ObservedObject private var viewModel = GearDetailViewModel()
     private let currencies = ["CAD", "USD", "JPY"]
     @Binding var navigationPath: [CustomNavigationPath]
@@ -20,6 +21,11 @@ struct GearDetailView: View {
                 Spacer()
             }
             .padding(.horizontal, 20)
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                doneButton()
+            }
         }
     }
 }
@@ -129,6 +135,14 @@ private extension GearDetailView {
                 .foregroundStyle(.primaryTextBlack)
             TextField("Changed the O-rings on the regulator", text: $viewModel.noteInput, axis: .vertical)
                 .roundedTextField()
+        }
+    }
+
+    func doneButton() -> some View {
+        Button(action: {
+            viewModel.didTapUpdateButton(uid: authManager.user?.uid)
+        }) {
+            Text("Done")
         }
     }
 }

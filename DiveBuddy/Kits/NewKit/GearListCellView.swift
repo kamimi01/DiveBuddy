@@ -17,18 +17,18 @@ struct GearListCellView: View {
         }) {
             HStack(alignment: .center, spacing: 20) {
                 Image(viewModel.isSelected ? .checked : .noChecked)
-                AsyncImage(url: URL(string: gear.imageURL)) { image in
-                    image.resizable()
-                } placeholder: {
-                    Color.secondaryBgGray
-                }
-                .frame(width: 70, height: 70)
-                .clipShape(.rect(cornerRadius: 10))
+//                AsyncImage(url: URL(string: gear.imageURL)) { image in
+//                    image.resizable()
+//                } placeholder: {
+//                    Color.secondaryBgGray
+//                }
+//                .frame(width: 70, height: 70)
+//                .clipShape(.rect(cornerRadius: 10))
                 VStack(alignment: .leading, spacing: 5) {
                     Text(gear.name)
                         .foregroundStyle(.primaryTextBlack)
                         .font(.customFont(size: .three))
-                    Text(gear.brand)
+                    Text(gear.brandName)
                         .foregroundStyle(.secondaryTextGray)
                         .font(.customFont(size: .four))
                 }
@@ -40,5 +40,25 @@ struct GearListCellView: View {
 }
 
 #Preview {
-    GearListCellView(gear: Gear(name: "BCD", imageURL: "https://picsum.photos/200", brand: "TUSA"))
+    GearListCellView(gear: Gear(
+        id: "gear1",
+        name: "Dry Suit",
+        imageData: Data(), // Assume some image data here
+        brandName: "AquaLung",
+        price: 1200.0,
+        currency: .usd,
+        purchaseDate: Date(timeIntervalSince1970: 1625164800), // 2021-07-01
+        maintenanceHistories: [
+            MaintenanceHistory(
+                id: "maintenance1",
+                gearID: "gear1",
+                date: Date(timeIntervalSince1970: 1627843200), // 2021-08-01
+                details: "Routine check-up and seal replacement",
+                currency: "USD",
+                price: 150.0,
+                note: "Replaced seals and lubricated zippers."
+            )
+        ],
+        note: "Used for deep diving."
+    ))
 }

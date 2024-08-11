@@ -26,7 +26,19 @@ final class DatabaseManager {
                 print("cannot find a key")
                 return
             }
+
+            await updateUserData(uid: uid, key: key)
             await uploadImage(uid: uid, gearID: key, data: gear.imageData)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    private func updateUserData(uid: String, key: String) async {
+        do {
+            print("Firebase write started2")
+            try await ref.child("User").child(uid).child("gears").updateChildValues([key: true])
+            print("Firebase write finished2")
         } catch {
             print(error.localizedDescription)
         }
@@ -56,7 +68,7 @@ final class DatabaseManager {
         let data = try await ref?.child("Gear").childByAutoId().updateChildValues(newGear)
         print("data:", data)
         print("Firebase write finished")
-        
+
         return data
 
 //        print("Firebase read started")

@@ -33,4 +33,8 @@ final class NewKitViewModel: ObservableObject {
     func didTapChangeEmojiButton() {
         isPresentedEmojiPicker = true
     }
+
+    func didTapUpdateButton() {
+       
+    }
 }

@@ -78,7 +78,9 @@ private extension NewKitView {
     }
 
     func doneButton() -> some View {
-        Button(action: {}) {
+        Button(action: {
+            viewModel.didTapUpdateButton()
+        }) {
             Text("Done")
         }
     }

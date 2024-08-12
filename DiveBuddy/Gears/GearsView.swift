@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GearsView: View {
     @EnvironmentObject var authManager: AuthManager
+    @ObservedObject private var viewModel = GearsViewModel()
     @State private var navigationPath: [CustomNavigationPath] = []
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
 
@@ -32,6 +33,9 @@ struct GearsView: View {
                 default: EmptyView()
                 }
             }
+        }
+        .onAppear {
+            viewModel.onAppear(uid: authManager.user?.uid)
         }
     }
 }

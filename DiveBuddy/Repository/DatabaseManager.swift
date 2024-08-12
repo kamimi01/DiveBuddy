@@ -95,8 +95,8 @@ final class DatabaseManager {
         return gears
     }
 
-    func getDownloadURL(fileName: String) async throws -> URL {
-        let imageRef = storageRef.child("\(StorageNodeName.gear.rawValue)/\(fileName).png")
+    func getDownloadURL(uid: String, fileName: String) async throws -> URL {
+        let imageRef = storageRef.child("\(StorageNodeName.gear.rawValue)/\(uid)/\(fileName).png")
 
         let url = try await imageRef.downloadURL()
         return url

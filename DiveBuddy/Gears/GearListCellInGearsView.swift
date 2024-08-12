@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GearListCellInGearsView: View {
     @ObservedObject private var viewModel = GearListCellInGearsViewModel()
+    @EnvironmentObject var authManager: AuthManager
     let gear: Gear
 
     var body: some View {
@@ -20,6 +21,9 @@ struct GearListCellInGearsView: View {
             .roundedCardButtonFrame()
         }
         .roundedCardButton(.one)
+        .onAppear {
+            viewModel.onAppear(uid: authManager.user?.uid, gear: gear)
+        }
     }
 }
 
@@ -36,7 +40,7 @@ private extension GearListCellInGearsView {
                 .clipShape(.rect(cornerRadius: 40))
             } else {
                 Circle()
-                    .fill(.secondaryBgGray)
+                    .fill(.primaryIconGray)
                     .frame(width: 80, height: 80)
             }
         }

@@ -16,14 +16,17 @@ final class GearListCellInGearsViewModel: ObservableObject {
         self.databaseManager = databaseManager
     }
 
-    func onAppear(gear: Gear) {
-        getDownloadURL(id: gear.id)
+    func onAppear(uid: String?, gear: Gear) {
+        guard let uid else {
+            fatalError("cannot find uid")
+        }
+        getDownloadURL(uid: uid, id: gear.id)
     }
 
-    private func getDownloadURL(id: String) {
+    private func getDownloadURL(uid: String, id: String) {
         Task {
             do {
-                let url = try await databaseManager?.getDownloadURL(fileName: id)
+                let url = try await databaseManager?.getDownloadURL(uid: uid, fileName: id)
                 await MainActor.run {
                     self.imageURL = url
                 }

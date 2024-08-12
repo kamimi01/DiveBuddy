@@ -17,7 +17,14 @@ struct GearsView: View {
         NavigationStack(path: $navigationPath) {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 30) {
-                    instructionCardButton()
+                    if viewModel.gears.isEmpty {
+                        instructionCardButton()
+                    } else {
+                        ForEach(viewModel.gears) { gear in
+                            GearListCellInGearsView(gear: gear)
+                                .environmentObject(authManager)
+                        }
+                    }
                     addGearCardButton()
                 }
             }

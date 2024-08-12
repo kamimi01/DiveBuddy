@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct GearListCellInGearsView: View {
-    
+    @ObservedObject private var viewModel = GearListCellInGearsViewModel()
     let gear: Gear
 
     var body: some View {
         Button(action: {}) {
             VStack(spacing: 15) {
-//                circleWithGearImage()
+                circleWithGearImage()
                 gearName()
             }
             .roundedCardButtonFrame()
@@ -24,15 +24,23 @@ struct GearListCellInGearsView: View {
 }
 
 private extension GearListCellInGearsView {
-//    func circleWithGearImage() -> some View {
-//        AsyncImage(url: URL(string: gear.imageURL)) { image in
-//            image.resizable()
-//        } placeholder: {
-//            Color.secondaryBgGray
-//        }
-//        .frame(width: 80, height: 80)
-//        .clipShape(.rect(cornerRadius: 40))
-//    }
+    func circleWithGearImage() -> some View {
+        Group {
+            if let url = viewModel.imageURL {
+                AsyncImage(url: url) { image in
+                    image.resizable()
+                } placeholder: {
+                    Color.secondaryBgGray
+                }
+                .frame(width: 80, height: 80)
+                .clipShape(.rect(cornerRadius: 40))
+            } else {
+                Circle()
+                    .fill(.secondaryBgGray)
+                    .frame(width: 80, height: 80)
+            }
+        }
+    }
 
     func gearName() -> some View {
         Text(gear.name)

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GearListCellInGearsView: View {
+    
     let gear: Gear
 
     var body: some View {

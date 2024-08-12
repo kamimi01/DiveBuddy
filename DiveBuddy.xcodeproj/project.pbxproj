@@ -19,6 +19,7 @@
 		D40FF43B2C62EE2700585691 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF43A2C62EE2700585691 /* WelcomeViewModel.swift */; };
 		D40FF43D2C62EFA700585691 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF43C2C62EFA700585691 /* SignupView.swift */; };
 		D40FF43F2C62EFE400585691 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF43E2C62EFE400585691 /* LoginViewModel.swift */; };
+		D446C5022C69C6C500574348 /* GearListCellInGearsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446C5012C69C6C500574348 /* GearListCellInGearsViewModel.swift */; };
 		D462ADB62C63E5660054D73A /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADB52C63E5660054D73A /* SignupViewModel.swift */; };
 		D462ADBA2C63E7380054D73A /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADB92C63E7380054D73A /* TabBarView.swift */; };
 		D462ADBD2C63E7A40054D73A /* KitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADBC2C63E7A40054D73A /* KitsView.swift */; };
@@ -87,6 +88,7 @@
 		D40FF43C2C62EFA700585691 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		D40FF43E2C62EFE400585691 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D41F51682C62A83900BEEC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D446C5012C69C6C500574348 /* GearListCellInGearsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListCellInGearsViewModel.swift; sourceTree = "<group>"; };
 		D462ADB52C63E5660054D73A /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		D462ADB92C63E7380054D73A /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D462ADBC2C63E7A40054D73A /* KitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitsView.swift; sourceTree = "<group>"; };
@@ -226,8 +228,9 @@
 				D46375022C66903500EE45D1 /* MaitenanceHistory */,
 				D462ADBE2C63E7B80054D73A /* GearsView.swift */,
 				D4CC2EA52C653CD1003EDEDE /* GearDetailView.swift */,
-				D4CC2EA72C653E4D003EDEDE /* GearListCellInGearsView.swift */,
 				D4CC2EAB2C6548A9003EDEDE /* GearDetailViewModel.swift */,
+				D4CC2EA72C653E4D003EDEDE /* GearListCellInGearsView.swift */,
+				D446C5012C69C6C500574348 /* GearListCellInGearsViewModel.swift */,
 			);
 			path = Gears;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				D4CC2EA62C653CD1003EDEDE /* GearDetailView.swift in Sources */,
 				D40FF4372C62CBF800585691 /* LoginView.swift in Sources */,
 				D463751A2C66E17300EE45D1 /* AppDelegate.swift in Sources */,
+				D446C5022C69C6C500574348 /* GearListCellInGearsViewModel.swift in Sources */,
 				D40FF43B2C62EE2700585691 /* WelcomeViewModel.swift in Sources */,
 				D407278D2C62AA9B0038C5B0 /* Font+.swift in Sources */,
 				D4CC2EAC2C6548A9003EDEDE /* GearDetailViewModel.swift in Sources */,

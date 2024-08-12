@@ -20,32 +20,15 @@ final class DatabaseManager {
     /// Create gear data
     func create(uid: String, gear: Gear) async {
         do {
-            let data = try await createGearData(uid: uid, gear: gear)
-
-            guard let key = data?.key else {
-                print("cannot find a key")
-                return
-            }
-
-            await updateUserData(uid: uid, key: key)
-            await uploadImage(uid: uid, gearID: key, data: gear.imageData)
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-
-    private func updateUserData(uid: String, key: String) async {
-        do {
-            print("Firebase write started2")
-            try await ref.child("User").child(uid).child("gears").updateChildValues([key: true])
-            print("Firebase write finished2")
+            let newGearID = try await createGearData(uid: uid, gear: gear)
+            await uploadImage(uid: uid, gearID: newGearID, data: gear.imageData)
         } catch {
             print(error.localizedDescription)
         }
     }
 
     /// Create new data in firebase realtime database
-    private func createGearData(uid: String, gear: Gear) async throws -> DatabaseReference? {
+    private func createGearData(uid: String, gear: Gear) async throws -> String {
         print("Firebase write started")
         var maitenanceHistories: [String: Bool] {
             var histories: [String: Bool] = [:]
@@ -55,9 +38,7 @@ final class DatabaseManager {
             return histories
         }
         let newGear: [String : Any] = [
-            "userID": uid,
             "name": gear.name,
-            "imageURL": "url in cloud storage",  // TODO: replace url after implementing cloud storage
             "brandName": gear.brandName,
             "currency": gear.currency.rawValue,
             "price": gear.price,
@@ -65,16 +46,12 @@ final class DatabaseManager {
             "_updatedAt": Int(Date().timeIntervalSince1970),
             "_createdAt": Int(Date().timeIntervalSince1970)
         ]
-        let data = try await ref?.child("Gear").childByAutoId().updateChildValues(newGear)
-        print("data:", data)
+
+        let gearID = UUID().uuidString
+        let data = try await ref?.child("Gear").child(uid).child(gearID).updateChildValues(newGear)
         print("Firebase write finished")
 
-        return data
-
-//        print("Firebase read started")
-//        let snapshot = try await ref?.child("Gear").getData()
-//        print("received data:", snapshot!)
-//        print("Firebase read finished")
+        return gearID
     }
 
     /// Upload gear image to cloud storage

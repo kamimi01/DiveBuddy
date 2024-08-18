@@ -229,11 +229,11 @@
 			children = (
 				D46375022C66903500EE45D1 /* MaitenanceHistory */,
 				D462ADBE2C63E7B80054D73A /* GearsView.swift */,
+				D446C5032C69CDAA00574348 /* GearsViewModel.swift */,
 				D4CC2EA52C653CD1003EDEDE /* GearDetailView.swift */,
 				D4CC2EAB2C6548A9003EDEDE /* GearDetailViewModel.swift */,
 				D4CC2EA72C653E4D003EDEDE /* GearListCellInGearsView.swift */,
 				D446C5012C69C6C500574348 /* GearListCellInGearsViewModel.swift */,
-				D446C5032C69CDAA00574348 /* GearsViewModel.swift */,
 			);
 			path = Gears;
 			sourceTree = "<group>";

@@ -21,7 +21,7 @@ struct GearsView: View {
                         instructionCardButton()
                     } else {
                         ForEach(viewModel.gears) { gear in
-                            GearListCellInGearsView(gear: gear)
+                            GearListCellInGearsView(gearViewModel: viewModel, navigationPath: $navigationPath, gear: gear)
                                 .environmentObject(authManager)
                         }
                     }
@@ -34,9 +34,11 @@ struct GearsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: CustomNavigationPath.self) { path in
                 switch path {
-                case .toGearDetailView: GearDetailView(navigationPath: $navigationPath)
+                case .toGearDetailView: 
+                    GearDetailView(gearViewModel: viewModel, navigationPath: $navigationPath)
                         .environmentObject(authManager)
-                case .toMaintenanceHistoryDetailView: MaintenanceHistoryDetailView()
+                case .toMaintenanceHistoryDetailView: 
+                    MaintenanceHistoryDetailView()
                 default: EmptyView()
                 }
             }
@@ -51,7 +53,6 @@ private extension GearsView {
     func instructionCardButton() -> some View {
         // TODO: delete this button later
         Button(action: {
-            navigationPath.append(.toGearDetailView)
         }) {
             VStack(spacing: 10) {
                 circleView(emojiText: "🔧")

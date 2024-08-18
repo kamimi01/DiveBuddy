@@ -11,6 +11,7 @@ import PhotosUI
 struct GearDetailView: View {
     @EnvironmentObject var authManager: AuthManager
     @ObservedObject private var viewModel = GearDetailViewModel()
+    @ObservedObject var gearViewModel: GearsViewModel
     private let currencies = ["CAD", "USD", "JPY"]
     @Binding var navigationPath: [CustomNavigationPath]
 
@@ -27,6 +28,9 @@ struct GearDetailView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 doneButton()
             }
+        }
+        .onAppear {
+            viewModel.onAppear(gear: gearViewModel.selectedGear)
         }
     }
 }
@@ -157,5 +161,5 @@ private extension GearDetailView {
 }
 
 #Preview {
-    GearDetailView(navigationPath: .constant([.toNewKitView]))
+    GearDetailView(gearViewModel: GearsViewModel(), navigationPath: .constant([.toNewKitView]))
 }

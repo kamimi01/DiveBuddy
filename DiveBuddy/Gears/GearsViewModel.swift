@@ -11,6 +11,7 @@ final class GearsViewModel: ObservableObject {
     @Published var gears = [Gear]()
     @Published var isPresetedErrorAlert = false
     @Published var errorMessage = ""
+    @Published var selectedGear: Gear?
 
     private var databaseManager: DatabaseManager?
 
@@ -40,5 +41,9 @@ final class GearsViewModel: ObservableObject {
                 }
             }
         }
+    }
+
+    func didTapGearListCell(gear: Gear) {
+        selectedGear = gear
     }
 }

@@ -46,6 +46,16 @@ final class GearDetailViewModel: ObservableObject {
         self.databaseManager = databaseManager
     }
 
+    func onAppear(gear: Gear?) {
+        nameInput = gear?.name ?? ""
+        brandInput = gear?.brandName ?? ""
+        selectedCurrency = gear?.currency.rawValue ?? ""
+        priceInput = String(gear?.price ?? 0)
+        selectedPurchaseDate = gear?.purchaseDate ?? Date()
+        noteInput = gear?.note ?? ""
+        selectedImageData = gear?.imageData ?? Data()
+    }
+
     let maitenanceHistories = [
         MaintenanceHistory(
             id: "maintenance1",
@@ -82,7 +92,17 @@ final class GearDetailViewModel: ObservableObject {
             return
         }
 
-        let gear = Gear(id: "", name: nameInput, imageData: selectedImageData, brandName: brandInput, price: Double(priceInput) ?? 0, currency: Currency(rawValue: selectedCurrency) ?? .none, purchaseDate: selectedPurchaseDate, maintenanceHistories: [MaintenanceHistory(id: "maitenanceID1", gearID: "", date: Date(), details: "", currency: Currency.jpy.rawValue, price: 0, note: "")], note: noteInput)
+        let gear = Gear(
+            id: "",
+            name: nameInput,
+            imageData: selectedImageData,
+            brandName: brandInput,
+            price: Double(priceInput) ?? 0,
+            currency: Currency(rawValue: selectedCurrency) ?? .none,
+            purchaseDate: selectedPurchaseDate,
+            maintenanceHistories: [MaintenanceHistory(id: "maitenanceID1", gearID: "", date: Date(),details: "", currency: Currency.jpy.rawValue, price: 0, note: "")],
+            note: noteInput
+        )
 
         Task {
             await databaseManager?.create(uid: uid, gear: gear)

@@ -78,6 +78,7 @@ private extension GearsView {
 
     func addGearCardButton() -> some View {
         Button(action: {
+            viewModel.didTapAddGearCardButton()
             navigationPath.append(.toGearDetailView)
         }) {
             Image(systemName: "plus")

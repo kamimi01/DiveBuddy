@@ -46,4 +46,8 @@ final class GearsViewModel: ObservableObject {
     func didTapGearListCell(gear: Gear) {
         selectedGear = gear
     }
+
+    func didTapAddGearCardButton() {
+        selectedGear = nil
+    }
 }

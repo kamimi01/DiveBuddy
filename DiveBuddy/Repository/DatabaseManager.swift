@@ -59,6 +59,7 @@ final class DatabaseManager {
             "currency": gear.currency.rawValue,
             "price": gear.price,
             "maintenanceHistories": maitenanceHistories,
+            "note": gear.note,
             "_updatedAt": Int(Date().timeIntervalSince1970),
             "_createdAt": Int(Date().timeIntervalSince1970)
         ]
@@ -75,6 +76,45 @@ final class DatabaseManager {
         let imagesRef = storageRef.child("\(StorageNodeName.gear.rawValue)/\(uid)/\(gearID).png")
 
         do {
+            _ = try await imagesRef.putDataAsync(data)
+            let downloadURL = try await imagesRef.downloadURL()
+            print("download URL:", downloadURL)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    func updateGear(uid: String, gear: Gear) async {
+        do {
+            try await updateGearData(uid: uid, gear: gear)
+            await updateImage(uid: uid, gearID: gear.id, data: gear.imageData)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    private func updateGearData(uid: String, gear: Gear) async throws {
+        print("Firebase write started")
+        let updatedGear: [String: Any] = [
+            "name": gear.name,
+            "brandName": gear.brandName,
+            "currency": gear.currency.rawValue,
+            "price": gear.price,
+            "maintenanceHistories": ["test": true],
+            "note": gear.note,
+            "_updatedAt": Int(Date().timeIntervalSince1970),
+            "_createdAt": Int(Date().timeIntervalSince1970), // FIME: keep original value
+        ]
+
+        let data = try await ref?.child(DatabaseNodeName.gear.rawValue).child(uid).child(gear.id).setValue(updatedGear)
+        print("Firebase write finished")
+    }
+
+    private func updateImage(uid: String, gearID: String, data: Data) async {
+        let imagesRef = storageRef.child("\(StorageNodeName.gear.rawValue)/\(uid)/\(gearID).png")
+
+        do {
+            try await imagesRef.delete()
             _ = try await imagesRef.putDataAsync(data)
             let downloadURL = try await imagesRef.downloadURL()
             print("download URL:", downloadURL)

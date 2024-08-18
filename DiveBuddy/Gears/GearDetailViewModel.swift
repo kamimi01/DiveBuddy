@@ -20,6 +20,7 @@ struct MaintenanceHistory: Identifiable {
 }
 
 final class GearDetailViewModel: ObservableObject {
+    private var id = ""
     @Published var nameInput = ""
     @Published var brandInput = ""
     @Published var selectedCurrency = "CAD"
@@ -47,6 +48,7 @@ final class GearDetailViewModel: ObservableObject {
     }
 
     func onAppear(gear: Gear?) {
+        id = gear?.id ?? ""
         nameInput = gear?.name ?? ""
         brandInput = gear?.brandName ?? ""
         selectedCurrency = gear?.currency.rawValue ?? ""
@@ -93,7 +95,7 @@ final class GearDetailViewModel: ObservableObject {
         }
 
         let gear = Gear(
-            id: "",
+            id: id,
             name: nameInput,
             imageData: selectedImageData,
             brandName: brandInput,
@@ -105,7 +107,11 @@ final class GearDetailViewModel: ObservableObject {
         )
 
         Task {
-            await databaseManager?.create(uid: uid, gear: gear)
+            if id.isEmpty {
+                await databaseManager?.create(uid: uid, gear: gear)
+            } else {
+                await databaseManager?.updateGear(uid: uid, gear: gear)
+            }
         }
     }
 }

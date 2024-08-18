@@ -88,7 +88,7 @@ final class GearDetailViewModel: ObservableObject {
         )
     ]
 
-    func didTapUpdateButton(uid: String?) {
+    func didTapUpdateButton(uid: String?) async {
         guard let uid else {
             print("cannot find uid")
             return
@@ -106,12 +106,10 @@ final class GearDetailViewModel: ObservableObject {
             note: noteInput
         )
 
-        Task {
-            if id.isEmpty {
-                await databaseManager?.create(uid: uid, gear: gear)
-            } else {
-                await databaseManager?.updateGear(uid: uid, gear: gear)
-            }
+        if id.isEmpty {
+            await databaseManager?.create(uid: uid, gear: gear)
+        } else {
+            await databaseManager?.updateGear(uid: uid, gear: gear)
         }
     }
 }

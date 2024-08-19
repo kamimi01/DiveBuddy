@@ -206,6 +206,26 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		D43834B72C73844300E02A06 /* GearList */ = {
+			isa = PBXGroup;
+			children = (
+				D4CC2EA72C653E4D003EDEDE /* GearListCellInGearsView.swift */,
+				D446C5012C69C6C500574348 /* GearListCellInGearsViewModel.swift */,
+				D462ADBE2C63E7B80054D73A /* GearListView.swift */,
+				D446C5032C69CDAA00574348 /* GearListViewModel.swift */,
+			);
+			path = GearList;
+			sourceTree = "<group>";
+		};
+		D43834B82C73847100E02A06 /* GearDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D4CC2EA52C653CD1003EDEDE /* GearDetailView.swift */,
+				D4CC2EAB2C6548A9003EDEDE /* GearDetailViewModel.swift */,
+			);
+			path = GearDetail;
+			sourceTree = "<group>";
+		};
 		D462ADB72C63E6DF0054D73A /* Kits */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,13 +247,9 @@
 		D462ADBB2C63E78F0054D73A /* Gears */ = {
 			isa = PBXGroup;
 			children = (
+				D43834B82C73847100E02A06 /* GearDetail */,
+				D43834B72C73844300E02A06 /* GearList */,
 				D46375022C66903500EE45D1 /* MaitenanceHistory */,
-				D462ADBE2C63E7B80054D73A /* GearListView.swift */,
-				D446C5032C69CDAA00574348 /* GearListViewModel.swift */,
-				D4CC2EA52C653CD1003EDEDE /* GearDetailView.swift */,
-				D4CC2EAB2C6548A9003EDEDE /* GearDetailViewModel.swift */,
-				D4CC2EA72C653E4D003EDEDE /* GearListCellInGearsView.swift */,
-				D446C5012C69C6C500574348 /* GearListCellInGearsViewModel.swift */,
 			);
 			path = Gears;
 			sourceTree = "<group>";

@@ -11,7 +11,7 @@ import PhotosUI
 struct GearDetailView: View {
     @EnvironmentObject var authManager: AuthManager
     @ObservedObject private var viewModel = GearDetailViewModel()
-    @ObservedObject var gearViewModel: GearsViewModel
+    @ObservedObject var gearViewModel: GearListViewModel
     private let currencies = ["CAD", "USD", "JPY"]
     @Binding var navigationPath: [CustomNavigationPath]
 
@@ -163,5 +163,5 @@ private extension GearDetailView {
 }
 
 #Preview {
-    GearDetailView(gearViewModel: GearsViewModel(), navigationPath: .constant([.toNewKitView]))
+    GearDetailView(gearViewModel: GearListViewModel(), navigationPath: .constant([.toNewKitView]))
 }

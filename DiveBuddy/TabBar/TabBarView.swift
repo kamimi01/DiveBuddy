@@ -16,7 +16,7 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Kits", systemImage: "shippingbox")
                 }
-           GearsView()
+           GearListView()
                 .environmentObject(authManager)
                 .tabItem {
                     Label("Gears", systemImage: "wrench.adjustable.fill")

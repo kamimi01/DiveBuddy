@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct GearsView: View {
+struct GearListView: View {
     @EnvironmentObject var authManager: AuthManager
-    @ObservedObject private var viewModel = GearsViewModel()
+    @ObservedObject private var viewModel = GearListViewModel()
     @State private var navigationPath: [CustomNavigationPath] = []
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
 
@@ -49,7 +49,7 @@ struct GearsView: View {
     }
 }
 
-private extension GearsView {
+private extension GearListView {
     func instructionCardButton() -> some View {
         // TODO: delete this button later
         Button(action: {
@@ -92,5 +92,5 @@ private extension GearsView {
 }
 
 #Preview {
-    GearsView()
+    GearListView()
 }

@@ -20,11 +20,11 @@
 		D40FF43D2C62EFA700585691 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF43C2C62EFA700585691 /* SignupView.swift */; };
 		D40FF43F2C62EFE400585691 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF43E2C62EFE400585691 /* LoginViewModel.swift */; };
 		D446C5022C69C6C500574348 /* GearListCellInGearsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446C5012C69C6C500574348 /* GearListCellInGearsViewModel.swift */; };
-		D446C5042C69CDAA00574348 /* GearsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446C5032C69CDAA00574348 /* GearsViewModel.swift */; };
+		D446C5042C69CDAA00574348 /* GearListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446C5032C69CDAA00574348 /* GearListViewModel.swift */; };
 		D462ADB62C63E5660054D73A /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADB52C63E5660054D73A /* SignupViewModel.swift */; };
 		D462ADBA2C63E7380054D73A /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADB92C63E7380054D73A /* TabBarView.swift */; };
 		D462ADBD2C63E7A40054D73A /* KitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADBC2C63E7A40054D73A /* KitsView.swift */; };
-		D462ADBF2C63E7B80054D73A /* GearsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADBE2C63E7B80054D73A /* GearsView.swift */; };
+		D462ADBF2C63E7B80054D73A /* GearListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADBE2C63E7B80054D73A /* GearListView.swift */; };
 		D462ADC22C63E7CE0054D73A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADC12C63E7CE0054D73A /* SettingsView.swift */; };
 		D462ADC42C63EFAD0054D73A /* RoundedCardButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADC32C63EFAD0054D73A /* RoundedCardButtonStyle.swift */; };
 		D462ADC62C63FDC70054D73A /* NewKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADC52C63FDC70054D73A /* NewKitView.swift */; };
@@ -90,11 +90,11 @@
 		D40FF43E2C62EFE400585691 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D41F51682C62A83900BEEC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D446C5012C69C6C500574348 /* GearListCellInGearsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListCellInGearsViewModel.swift; sourceTree = "<group>"; };
-		D446C5032C69CDAA00574348 /* GearsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearsViewModel.swift; sourceTree = "<group>"; };
+		D446C5032C69CDAA00574348 /* GearListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListViewModel.swift; sourceTree = "<group>"; };
 		D462ADB52C63E5660054D73A /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		D462ADB92C63E7380054D73A /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D462ADBC2C63E7A40054D73A /* KitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitsView.swift; sourceTree = "<group>"; };
-		D462ADBE2C63E7B80054D73A /* GearsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearsView.swift; sourceTree = "<group>"; };
+		D462ADBE2C63E7B80054D73A /* GearListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListView.swift; sourceTree = "<group>"; };
 		D462ADC12C63E7CE0054D73A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D462ADC32C63EFAD0054D73A /* RoundedCardButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCardButtonStyle.swift; sourceTree = "<group>"; };
 		D462ADC52C63FDC70054D73A /* NewKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewKitView.swift; sourceTree = "<group>"; };
@@ -228,8 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				D46375022C66903500EE45D1 /* MaitenanceHistory */,
-				D462ADBE2C63E7B80054D73A /* GearsView.swift */,
-				D446C5032C69CDAA00574348 /* GearsViewModel.swift */,
+				D462ADBE2C63E7B80054D73A /* GearListView.swift */,
+				D446C5032C69CDAA00574348 /* GearListViewModel.swift */,
 				D4CC2EA52C653CD1003EDEDE /* GearDetailView.swift */,
 				D4CC2EAB2C6548A9003EDEDE /* GearDetailViewModel.swift */,
 				D4CC2EA72C653E4D003EDEDE /* GearListCellInGearsView.swift */,
@@ -519,10 +519,10 @@
 				D4009C922C67FF66009E689D /* AuthRouterView.swift in Sources */,
 				D40727902C62AEFD0038C5B0 /* RoundedButtonStyle.swift in Sources */,
 				D4B298EA2C5EBB2C004D32BB /* WelcomeView.swift in Sources */,
-				D462ADBF2C63E7B80054D73A /* GearsView.swift in Sources */,
+				D462ADBF2C63E7B80054D73A /* GearListView.swift in Sources */,
 				D463750D2C66DD6F00EE45D1 /* SettingsViewModel.swift in Sources */,
 				D4CC2EA02C646A87003EDEDE /* GearListCellInCheckListView.swift in Sources */,
-				D446C5042C69CDAA00574348 /* GearsViewModel.swift in Sources */,
+				D446C5042C69CDAA00574348 /* GearListViewModel.swift in Sources */,
 				D4CC2E962C646142003EDEDE /* GearListCellView.swift in Sources */,
 				D4CC2EA42C653423003EDEDE /* KitListCellView.swift in Sources */,
 				D40727932C62AFBA0038C5B0 /* View+.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GearListCellInGearsView: View {
     @ObservedObject private var viewModel = GearListCellInGearsViewModel()
-    @ObservedObject var gearViewModel: GearsViewModel
+    @ObservedObject var gearViewModel: GearListViewModel
     @EnvironmentObject var authManager: AuthManager
     @Binding var navigationPath: [CustomNavigationPath]
     let gear: Gear
@@ -61,7 +61,7 @@ private extension GearListCellInGearsView {
 
 #Preview {
     GearListCellInGearsView(
-        gearViewModel: GearsViewModel(),
+        gearViewModel: GearListViewModel(),
         navigationPath: .constant([.toGearDetailView]),
         gear: Gear(
             id: "gear1",

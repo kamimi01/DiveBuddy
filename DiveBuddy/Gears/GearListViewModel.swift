@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class GearsViewModel: ObservableObject {
+final class GearListViewModel: ObservableObject {
     @Published var gears = [Gear]()
     @Published var isPresetedErrorAlert = false
     @Published var errorMessage = ""

@@ -39,8 +39,7 @@ private extension GearDetailView {
     func gearImageView() -> some View {
         PhotosPicker(selection: $viewModel.selectedImage) {
             ZStack {
-                if let image = viewModel.selectedImage,
-                   let uiImage = UIImage(data: viewModel.selectedImageData) {
+                if let uiImage = UIImage(data: viewModel.selectedImageData) {
                     Image(uiImage: uiImage)
                         .resizable()
                         .frame(width: 100, height: 100)

@@ -131,7 +131,7 @@ final class DatabaseManager {
         }
 
         print("received data:", snapshot.value)
-        let gears = convert(from: snapshot)
+        let gears = await convert(from: snapshot, uid: uid)
         return gears
     }
 
@@ -142,7 +142,7 @@ final class DatabaseManager {
         return url
     }
 
-    private func convert(from snapshot: DataSnapshot) -> [Gear] {
+    private func convert(from snapshot: DataSnapshot, uid: String) async -> [Gear] {
         var gears: [Gear] = []
 
         guard let snapshotValue = snapshot.value as? [String: Any] else {
@@ -171,20 +171,41 @@ final class DatabaseManager {
                 //                        }
                 //                    }
 
-                let gear = Gear(id: id,
-                                name: name,
-                                imageData: Data(), // Assuming image data is not available in the snapshot
-                                brandName: brandName,
-                                price: price,
-                                currency: currency,
-                                purchaseDate: purchaseDate,
-                                maintenanceHistories: maintenanceHistories,
-                                note: note)
+                let imageData = await createImageData(uid: uid, gearId: id) ?? Data()
+
+                let gear = Gear(
+                    id: id,
+                    name: name,
+                    imageData: imageData,
+                    brandName: brandName,
+                    price: price,
+                    currency: currency,
+                    purchaseDate: purchaseDate,
+                    maintenanceHistories: maintenanceHistories,
+                    note: note
+                )
 
                 gears.append(gear)
             }
         }
 
         return gears
+    }
+
+    private func createImageData(uid: String, gearId: String) async -> Data? {
+        do {
+            let url = try await getDownloadURL(uid: uid, fileName: gearId)
+
+            let (data, response) = try await URLSession.shared.data(from: url)
+            guard let response = response as? HTTPURLResponse,
+                  response.statusCode == 200 else {
+                print("failed to fetch image")
+                return nil
+            }
+            return data
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
     }
 }

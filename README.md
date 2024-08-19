@@ -55,62 +55,113 @@ Manage and customize your diving gear sets with ease for various conditions and 
 
 ```json
 {
-  "User": {
-    "userID1": {
-      "kits": {
-        "kitID1": true,
-        "kitID3": true
-      },
-      "gears": {
-        "gearID1": true,
-        "gearID4": true,
-        "gearID5": true
-      }
-    }
-  },
-  "Kit": {
-    "kitID1": {
-      "userID": "userID1",
-      "name": "Summer Diving",
-      "color": "blue",
-      "emoji": "😎",
-      "gears": {
-        "gearID1": true,
-        "gearID2": true
-      },
-      "gearCheckList": {
-        "gearID1": true,
-        "gearID2": false
-      },
-      "_updatedAt": 1234566,
-      "_createdAt": 1234566
-    }
-  },
-  "Gear": {
-    "gearID1": {
-      "userID": "userID1",
-      "name": "Dry Suit",
-      "brandName": "Aqualung",
-      "price": 500,
-      "purchaseDate": 123455,
-      "maintenances": {
-        "maintenanceID1": true,
-        "maintenanceID2": true
-      },
-      "_updatedAt": 1234566,
-      "_createdAt": 1234566 
-    }
-  },
-  "Maintenance": {
-    "maintenanceID1": {
-      "gearID": "gearID1",
-      "date": 1234566,
-      "details": "Cleaning",
-      "price": 50,
-      "note": "Replaced small parts",
-      "_updatedAt": 1234566,
-      "_createdAt": 1234566
+    "Kit": {
+        "uZD0SSrDgFSejfl8KIn0dho1snF3": {
+            "kitID1": {
+                "name": "Summer Diving",
+                "color": "blue",
+                "emoji": "😎",
+                "gears": {
+                    "gearID1": true,
+                    "gearID2": true
+                },
+                "gearCheckList": {
+                    "gearID1": true,
+                    "gearID2": false
+                },
+                "_updatedAt": 1234566,
+                "_createdAt": 1234566
+            },
+            "kitID3": {
+                "name": "Summer Diving",
+                "color": "blue",
+                "emoji": "🤿",
+                "gears": {
+                    "gearID1": true,
+                    "gearID2": true
+                },
+                "gearCheckList": {
+                    "gearID1": true,
+                    "gearID2": false
+                },
+                "_updatedAt": 1234566,
+                "_createdAt": 1234566
+            }
+        },
+        "RK9xBXlQTBR8YZja6KcWYid5sFf1": {
+            "kitID2": {
+                "name": "Winter Diving",
+                "color": "blue",
+                "emoji": "🤿",
+                "gears": {
+                    "gearID1": true,
+                    "gearID2": true
+                },
+                "gearCheckList": {
+                    "gearID1": true,
+                    "gearID2": false
+                },
+                "_updatedAt": 1234566,
+                "_createdAt": 1234566
+            }
+        }
     },
-  }
+    "Gear": {
+        "uZD0SSrDgFSejfl8KIn0dho1snF3": {
+            "gearID1": {
+                "name": "Dry Suit",
+                "brandName": "Aqualung",
+                "price": 500,
+                "purchaseDate": 123455,
+                "maintenances": {
+                    "maintenanceID1": true,
+                    "maintenanceID2": true
+                },
+                "_updatedAt": 1234566,
+                "_createdAt": 1234566
+            },
+            "gearID2": {
+                "name": "Light",
+                "brandName": "TUSA",
+                "price": 600,
+                "purchaseDate": 123455,
+                "maintenances": {
+                    "maintenanceID3": true
+                },
+                "_updatedAt": 1234566,
+                "_createdAt": 1234566
+            }
+        }
+    },
+    "Maintenance": {
+        "gearID1": {
+            "maintenanceID1": {
+                "date": 1234566,
+                "details": "Cleaning",
+                "price": 50,
+                "note": "Replaced small parts",
+                "_updatedAt": 1234566,
+                "_createdAt": 1234566
+            },
+            "maintenanceID2": {
+                "date": 1234566,
+                "details": "Repair",
+                "price": 50,
+                "note": "Replaced small parts",
+                "_updatedAt": 1234566,
+                "_createdAt": 1234566
+            }
+        },
+        "gearID2": {
+            "maintenanceID3": {
+                "date": 1234566,
+                "details": "Repair2",
+                "price": 50,
+                "note": "Replaced small parts",
+                "_updatedAt": 1234566,
+                "_createdAt": 1234566
+            }
+        }
+    }
 }
 ```

@@ -42,12 +42,12 @@ private extension GearDetailView {
                 if let uiImage = UIImage(data: viewModel.selectedImageData) {
                     Image(uiImage: uiImage)
                         .resizable()
-                        .frame(width: 100, height: 100)
-                        .clipShape(.rect(cornerRadius: 70))
+                        .frame(width: 200, height: 200)
+                        .clipShape(.rect(cornerRadius: 100))
                 } else {
                     Circle()
                         .fill(.secondaryBgGray)
-                        .frame(width: 100, height: 100)
+                        .frame(width: 200, height: 200)
                 }
                 Image(systemName: "square.and.pencil")
                     .resizable()

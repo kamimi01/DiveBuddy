@@ -249,7 +249,7 @@
 			children = (
 				D43834B82C73847100E02A06 /* GearDetail */,
 				D43834B72C73844300E02A06 /* GearList */,
-				D46375022C66903500EE45D1 /* MaitenanceHistory */,
+				D46375022C66903500EE45D1 /* MaintenanceHistory */,
 			);
 			path = Gears;
 			sourceTree = "<group>";
@@ -263,13 +263,13 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		D46375022C66903500EE45D1 /* MaitenanceHistory */ = {
+		D46375022C66903500EE45D1 /* MaintenanceHistory */ = {
 			isa = PBXGroup;
 			children = (
 				D46375032C66904800EE45D1 /* MaintenanceHistoryDetailView.swift */,
 				D46375052C66921500EE45D1 /* MaintenanceHistoryDetailViewModel.swift */,
 			);
-			path = MaitenanceHistory;
+			path = MaintenanceHistory;
 			sourceTree = "<group>";
 		};
 		D463751B2C66E2D600EE45D1 /* AuthService */ = {

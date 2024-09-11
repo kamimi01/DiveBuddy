@@ -14,19 +14,19 @@ enum RepositoryError: Error {
     case notFound
 }
 
-enum DatabaseNodeName: String {
-    case gear = "Gear"
-    case kit = "Kit"
-    case maintenance = "Maintenance"
-}
-
-enum StorageNodeName: String {
-    case gear = "gears"
-}
-
 final class DatabaseManager {
     private var ref: DatabaseReference!
     private var storageRef: StorageReference!
+
+    private enum DatabaseNodeName: String {
+        case gear = "Gear"
+        case kit = "Kit"
+        case maintenance = "Maintenance"
+    }
+
+    private enum StorageNodeName: String {
+        case gear = "gears"
+    }
 
     init() {
         ref = Database.database().reference()

@@ -37,8 +37,8 @@ struct GearListView: View {
                 case .toGearDetailView: 
                     GearDetailView(gearViewModel: viewModel, navigationPath: $navigationPath)
                         .environmentObject(authManager)
-                case .toMaintenanceHistoryDetailView: 
-                    MaintenanceHistoryDetailView()
+                case .toMaintenanceHistoryDetailView(let maintenanceHistory):
+                    MaintenanceHistoryDetailView(maintenanceHistory: maintenanceHistory)
                 default: EmptyView()
                 }
             }

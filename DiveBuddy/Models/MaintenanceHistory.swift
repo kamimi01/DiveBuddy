@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MaintenanceHistory: Identifiable {
+struct MaintenanceHistory: Identifiable, Hashable {
     let id: String
     let date: Date
     let details: String

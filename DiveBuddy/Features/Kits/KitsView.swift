@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-enum CustomNavigationPath {
+enum CustomNavigationPath: Hashable {
     case toNewKitView
     case toKitCheckListView
     case toGearDetailView
-    case toMaintenanceHistoryDetailView
+    case toMaintenanceHistoryDetailView(maitenanceHistory: MaintenanceHistory)
 }
 
 struct KitsView: View {
@@ -40,8 +40,8 @@ struct KitsView: View {
                     // FIXME:
 //                    GearDetailView(navigationPath: $navigationPath)
                     EmptyView()
-                case .toMaintenanceHistoryDetailView:
-                    MaintenanceHistoryDetailView()
+                case .toMaintenanceHistoryDetailView(let maintenanceHistory):
+                    MaintenanceHistoryDetailView(maintenanceHistory: maintenanceHistory)
                 }
             }
         }

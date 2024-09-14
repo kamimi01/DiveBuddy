@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MaintenanceHistoryDetailView: View {
+    var maintenanceHistory: MaintenanceHistory
     @ObservedObject private var viewModel = MaintenanceHistoryDetailViewModel()
 
     var body: some View {
@@ -23,6 +24,9 @@ struct MaintenanceHistoryDetailView: View {
         .padding(.horizontal, 20)
         .navigationTitle("Maitenance History")
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            viewModel.onAppear(maintenance: maintenanceHistory)
+        }
     }
 }
 
@@ -75,5 +79,5 @@ private extension MaintenanceHistoryDetailView {
 }
 
 #Preview {
-    MaintenanceHistoryDetailView()
+    MaintenanceHistoryDetailView(maintenanceHistory: MaintenanceHistory(id: "testID1", date: Date(), details: "details", currency: .cad, price: 200, note: "note"))
 }

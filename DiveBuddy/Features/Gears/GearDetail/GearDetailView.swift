@@ -128,7 +128,7 @@ private extension GearDetailView {
                 ForEach(viewModel.maintenanceHistories) { history in
                     VStack {
                         Button(action: {
-                            navigationPath.append(.toMaintenanceHistoryDetailView)
+                            navigationPath.append(.toMaintenanceHistoryDetailView(maitenanceHistory: history))
                         }) {
                             HStack {
                                 Text(history.date.description)

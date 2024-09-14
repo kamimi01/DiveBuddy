@@ -13,10 +13,10 @@ final class GearListViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var selectedGear: Gear?
 
-    private var databaseManager: GearRepository?
+    private var repository: GearRepository?
 
-    init(databaseManager: GearRepository = GearRepository()) {
-        self.databaseManager = databaseManager
+    init(repository: GearRepository = GearRepository()) {
+        self.repository = repository
     }
 
     func onAppear(uid: String?) {
@@ -26,7 +26,7 @@ final class GearListViewModel: ObservableObject {
 
         Task {
             do {
-                let gears = try await databaseManager?.find(by: uid)
+                let gears = try await repository?.find(by: uid)
                 await MainActor.run {
                     guard let gears else {
                         print("cannot find any gears")

@@ -39,6 +39,7 @@
 		D46375162C66E0D900EE45D1 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D46375152C66E0D900EE45D1 /* FirebaseDatabase */; };
 		D46375182C66E0D900EE45D1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D46375172C66E0D900EE45D1 /* FirebaseStorage */; };
 		D463751A2C66E17300EE45D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46375192C66E17300EE45D1 /* AppDelegate.swift */; };
+		D498FBBA2C961AA900ACD6E3 /* Gear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498FBB92C961AA900ACD6E3 /* Gear.swift */; };
 		D4B298E82C5EBB2C004D32BB /* DiveBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */; };
 		D4B298EA2C5EBB2C004D32BB /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B298E92C5EBB2C004D32BB /* WelcomeView.swift */; };
 		D4B298EC2C5EBB2D004D32BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B298EB2C5EBB2D004D32BB /* Assets.xcassets */; };
@@ -106,6 +107,7 @@
 		D463750C2C66DD6F00EE45D1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		D463750E2C66DF0000EE45D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D46375192C66E17300EE45D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D498FBB92C961AA900ACD6E3 /* Gear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gear.swift; sourceTree = "<group>"; };
 		D4B298E42C5EBB2C004D32BB /* DiveBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiveBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveBuddyApp.swift; sourceTree = "<group>"; };
 		D4B298E92C5EBB2C004D32BB /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		D45F05912C96091500F319E9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D498FBB92C961AA900ACD6E3 /* Gear.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				D462ADC62C63FDC70054D73A /* NewKitView.swift in Sources */,
 				D4CC2E9C2C64659A003EDEDE /* KitCheckListView.swift in Sources */,
 				D462ADC22C63E7CE0054D73A /* SettingsView.swift in Sources */,
+				D498FBBA2C961AA900ACD6E3 /* Gear.swift in Sources */,
 				D45F05902C96022A00F319E9 /* ImageStorageManager.swift in Sources */,
 				D40FF43D2C62EFA700585691 /* SignupView.swift in Sources */,
 				D4CC2EA62C653CD1003EDEDE /* GearDetailView.swift in Sources */,

@@ -9,27 +9,6 @@ import Foundation
 import SwiftUI
 import EmojiPicker
 
-enum Currency: String {
-    case jpy = "JPY"
-    case cad = "CAD"
-    case usd = "USD"
-    case eur = "EUR"
-
-    case none = "n/a"
-}
-
-struct Gear: Identifiable {
-    let id: String
-    let name: String
-    let imageData: Data
-    let brandName: String
-    let price: Double
-    let currency: Currency
-    let purchaseDate: Date
-    let maintenanceHistories: [MaintenanceHistory]
-    let note: String
-}
-
 final class NewKitViewModel: ObservableObject {
     @Published var kitColor: Color = .secondaryBgGray
     @Published var kitTitleInput = ""

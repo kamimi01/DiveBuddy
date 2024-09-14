@@ -100,7 +100,7 @@ final class GearDetailViewModel: ObservableObject {
             imageData: selectedImageData,
             brandName: brandInput,
             price: Double(priceInput) ?? 0,
-            currency: Currency(rawValue: selectedCurrency) ?? .none,
+            currency: Currency(rawValue: selectedCurrency) ?? .usd,
             purchaseDate: selectedPurchaseDate,
             maintenanceHistories: [MaintenanceHistory(id: "maitenanceID1", gearID: "", date: Date(),details: "", currency: Currency.jpy.rawValue, price: 0, note: "")],
             note: noteInput

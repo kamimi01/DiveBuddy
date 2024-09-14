@@ -236,6 +236,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D45F05932C9612FC00F319E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4B298EB2C5EBB2D004D32BB /* Assets.xcassets */,
+				D40FF4342C62C5F500585691 /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D462ADB72C63E6DF0054D73A /* Kits */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +322,7 @@
 		D4B298E62C5EBB2C004D32BB /* DiveBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				D45F05932C9612FC00F319E9 /* Resources */,
 				D45F05912C96091500F319E9 /* Models */,
 				D4009C952C693F95009E689D /* Repositories */,
 				D463750E2C66DF0000EE45D1 /* GoogleService-Info.plist */,
@@ -325,9 +335,7 @@
 				D407278E2C62AEEA0038C5B0 /* Components */,
 				D41F51682C62A83900BEEC1D /* Info.plist */,
 				D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */,
-				D4B298EB2C5EBB2D004D32BB /* Assets.xcassets */,
 				D4B298ED2C5EBB2D004D32BB /* Preview Content */,
-				D40FF4342C62C5F500585691 /* Localizable.xcstrings */,
 				D46375192C66E17300EE45D1 /* AppDelegate.swift */,
 			);
 			path = DiveBuddy;

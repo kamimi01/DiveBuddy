@@ -65,10 +65,9 @@ struct GearListCellInCheckListView: View {
             maintenanceHistories: [
                 MaintenanceHistory(
                     id: "maintenance1",
-                    gearID: "gear1",
                     date: Date(timeIntervalSince1970: 1627843200), // 2021-08-01
                     details: "Routine check-up and seal replacement",
-                    currency: "USD",
+                    currency: .usd,
                     price: 150.0,
                     note: "Replaced seals and lubricated zippers."
                 )

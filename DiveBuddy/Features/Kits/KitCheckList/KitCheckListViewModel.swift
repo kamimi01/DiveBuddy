@@ -20,10 +20,9 @@ final class KitCheckListViewModel: ObservableObject {
             maintenanceHistories: [
                 MaintenanceHistory(
                     id: "maintenance1",
-                    gearID: "gear1",
                     date: Date(timeIntervalSince1970: 1627843200), // 2021-08-01
                     details: "Routine check-up and seal replacement",
-                    currency: "USD",
+                    currency: .usd,
                     price: 150.0,
                     note: "Replaced seals and lubricated zippers."
                 )
@@ -41,19 +40,17 @@ final class KitCheckListViewModel: ObservableObject {
             maintenanceHistories: [
                 MaintenanceHistory(
                     id: "maintenance2",
-                    gearID: "gear2",
                     date: Date(timeIntervalSince1970: 1633046400), // 2021-10-01
                     details: "Battery replacement",
-                    currency: "EUR",
+                    currency: .eur,
                     price: 30.0,
                     note: "Replaced battery and performed function check."
                 ),
                 MaintenanceHistory(
                     id: "maintenance3",
-                    gearID: "gear2",
                     date: Date(timeIntervalSince1970: 1640995200), // 2022-01-01
                     details: "Software update",
-                    currency: "EUR",
+                    currency: .eur,
                     price: 20.0,
                     note: "Updated to latest firmware version."
                 )
@@ -74,10 +71,9 @@ final class KitCheckListViewModel: ObservableObject {
             maintenanceHistories: [
                 MaintenanceHistory(
                     id: "maintenance1",
-                    gearID: "gear1",
                     date: Date(timeIntervalSince1970: 1627843200), // 2021-08-01
                     details: "Routine check-up and seal replacement",
-                    currency: "USD",
+                    currency: .usd,
                     price: 150.0,
                     note: "Replaced seals and lubricated zippers."
                 )
@@ -95,19 +91,17 @@ final class KitCheckListViewModel: ObservableObject {
             maintenanceHistories: [
                 MaintenanceHistory(
                     id: "maintenance2",
-                    gearID: "gear2",
                     date: Date(timeIntervalSince1970: 1633046400), // 2021-10-01
                     details: "Battery replacement",
-                    currency: "EUR",
+                    currency: .eur,
                     price: 30.0,
                     note: "Replaced battery and performed function check."
                 ),
                 MaintenanceHistory(
                     id: "maintenance3",
-                    gearID: "gear2",
                     date: Date(timeIntervalSince1970: 1640995200), // 2022-01-01
                     details: "Software update",
-                    currency: "EUR",
+                    currency: .eur,
                     price: 20.0,
                     note: "Updated to latest firmware version."
                 )
@@ -125,10 +119,9 @@ final class KitCheckListViewModel: ObservableObject {
             maintenanceHistories: [
                 MaintenanceHistory(
                     id: "maintenance4",
-                    gearID: "gear3",
                     date: Date(timeIntervalSince1970: 1612137600), // 2021-02-01
                     details: "Strap replacement",
-                    currency: "JPY",
+                    currency: .jpy,
                     price: 1000.0,
                     note: "Replaced worn straps."
                 )

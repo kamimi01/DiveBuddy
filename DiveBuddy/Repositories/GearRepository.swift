@@ -69,6 +69,7 @@ final class GearRepository {
             "date": todayWithUnixTimeStamp(),
             "details": maintenanceHistory.details,
             "price": maintenanceHistory.price,
+            "currency": maintenanceHistory.currency.rawValue,
             "note": maintenanceHistory.note,
             "_updatedAt": Int(Date().timeIntervalSince1970),
             "_createdAt": Int(Date().timeIntervalSince1970)
@@ -113,11 +114,11 @@ final class GearRepository {
         }
 
         print("received data:", gearSnapshot.value)
-        let gears = await convert(gearSnapshot: gearSnapshot, uid: uid)
+        let gears = try await convert(gearSnapshot: gearSnapshot, uid: uid)
         return gears
     }
 
-    private func convert(gearSnapshot: DataSnapshot, uid: String) async -> [Gear] {
+    private func convert(gearSnapshot: DataSnapshot, uid: String) async throws -> [Gear] {
         var gears: [Gear] = []
 
         guard let snapshotValue = gearSnapshot.value as? [String: Any] else {
@@ -125,7 +126,7 @@ final class GearRepository {
             return gears
         }
 
-        for (id, gearData) in snapshotValue {
+        for (gearId, gearData) in snapshotValue {
             if let gearDict = gearData as? [String: Any] {
                 let name = gearDict["name"] as? String ?? ""
                 let brandName = gearDict["brandName"] as? String ?? ""
@@ -136,20 +137,12 @@ final class GearRepository {
                 let purchaseDate = Date(timeIntervalSince1970: createdAt)
                 let note = gearDict["note"] as? String ?? ""
 
-                var maintenanceHistories: [MaintenanceHistory] = []
-                //                    if let maintenanceDict = gearDict["maintenanceHistories"] as? [String: Any] {
-                //                        for (maintenanceID, value) in maintenanceDict {
-                //                            if let intValue = value as? Int {
-                //                                let maintenanceHistory = MaintenanceHistory(maintenanceID: maintenanceID, value: intValue)
-                //                                maintenanceHistories.append(maintenanceHistory)
-                //                            }
-                //                        }
-                //                    }
+                let maintenanceHistories = try await findMaintenance(gearId: gearId, uid: uid)
 
-                let imageData = await imageStorageManager.createImageData(uid: uid, gearId: id) ?? Data()
+                let imageData = await imageStorageManager.createImageData(uid: uid, gearId: gearId) ?? Data()
 
                 let gear = Gear(
-                    id: id,
+                    id: gearId,
                     name: name,
                     imageData: imageData,
                     brandName: brandName,
@@ -165,6 +158,51 @@ final class GearRepository {
         }
 
         return gears
+    }
+
+    private func findMaintenance(gearId: String, uid: String) async throws -> [MaintenanceHistory] {
+        let maitenanceSnapshot = try await ref?.child(DatabaseNodeName.maintenance.rawValue).child(gearId).getData()
+        guard let maitenanceSnapshot else {
+            throw RepositoryError.notFound
+        }
+
+        print("received data:", maitenanceSnapshot.value)
+        let gears = try await convert(maintenanceSnapshot: maitenanceSnapshot, uid: uid)
+        return gears
+    }
+
+    private func convert(maintenanceSnapshot: DataSnapshot, uid: String) async throws -> [MaintenanceHistory] {
+        var maintenances: [MaintenanceHistory] = []
+
+        guard let snapshotValue = maintenanceSnapshot.value as? [String: Any] else {
+            print("Error: Snapshot value is not a dictionary")
+            return maintenances
+        }
+
+        for (maintenceId, maintenanceData) in snapshotValue {
+            if let maintenanceDict = maintenanceData as? [String: Any] {
+                let dateInt = maintenanceDict["date"] as? TimeInterval ?? 0
+                let date = Date(timeIntervalSince1970: dateInt)
+                let details = maintenanceDict["details"] as? String ?? ""
+                let currencyStr = maintenanceDict["currency"] as? String ?? "CAD"
+                let currency = Currency(rawValue: currencyStr) ?? .cad
+                let price = maintenanceDict["price"] as? Double ?? 0.0
+                let note = maintenanceDict["note"] as? String ?? ""
+
+                let maintenance = MaintenanceHistory(
+                    id: maintenceId,
+                    date: date,
+                    details: details,
+                    currency: currency,
+                    price: price,
+                    note: note
+                )
+
+                maintenances.append(maintenance)
+            }
+        }
+
+        return maintenances
     }
 
     func getDownloadURL(uid: String, fileName: String) async throws -> URL {

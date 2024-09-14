@@ -9,10 +9,9 @@ import Foundation
 
 struct MaintenanceHistory: Identifiable {
     let id: String
-    let gearID: String
     let date: Date
     let details: String
-    let currency: String
+    let currency: Currency
     let price: Double
     let note: String
 }

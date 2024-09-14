@@ -21,7 +21,8 @@ final class GearListViewModel: ObservableObject {
 
     func onAppear(uid: String?) {
         guard let uid else {
-            fatalError("cannot find uid")
+            print("cannot find uid")
+            return
         }
 
         Task {

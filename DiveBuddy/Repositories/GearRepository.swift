@@ -36,29 +36,47 @@ final class GearRepository {
     /// Create new data in firebase realtime database
     private func createGearData(uid: String, gear: Gear) async throws -> String {
         print("Firebase write started")
-        var maitenanceHistories: [String: Bool] {
-            var histories: [String: Bool] = [:]
-            for maintenance in gear.maintenanceHistories {
-                histories[maintenance.id] = true
-            }
-            return histories
+        let gearID = UUID().uuidString
+
+        // Create an array that has ["maintenanceHistoryID": true] to register
+        var maintenanceHistories: [String: Bool] = [:]
+        for maintenanceHistory in gear.maintenanceHistories {
+            let newID = try await createMaintenanceHistory(maintenanceHistory, gearID: gearID)
+            maintenanceHistories[newID] = true
         }
+
         let newGear: [String : Any] = [
             "name": gear.name,
             "brandName": gear.brandName,
             "currency": gear.currency.rawValue,
             "price": gear.price,
-            "maintenanceHistories": maitenanceHistories,
+            "maintenanceHistories": maintenanceHistories,
             "note": gear.note,
             "_updatedAt": Int(Date().timeIntervalSince1970),
             "_createdAt": Int(Date().timeIntervalSince1970)
         ]
 
-        let gearID = UUID().uuidString
         let data = try await ref?.child(DatabaseNodeName.gear.rawValue).child(uid).child(gearID).updateChildValues(newGear)
         print("Firebase write finished")
 
         return gearID
+    }
+
+    private func createMaintenanceHistory(_ maintenanceHistory: MaintenanceHistory, gearID: String) async throws -> String {
+        let maintenanceHistoryID = UUID().uuidString
+
+        let newMaintenanceHistory: [String : Any] = [
+            "date": todayWithUnixTimeStamp(),
+            "details": maintenanceHistory.details,
+            "price": maintenanceHistory.price,
+            "note": maintenanceHistory.note,
+            "_updatedAt": Int(Date().timeIntervalSince1970),
+            "_createdAt": Int(Date().timeIntervalSince1970)
+        ]
+
+        let data = try await ref?.child(DatabaseNodeName.maintenance.rawValue).child(gearID).child(maintenanceHistoryID).updateChildValues(newMaintenanceHistory)
+
+        return maintenanceHistoryID
     }
 
     func update(uid: String, gear: Gear) async {
@@ -79,8 +97,8 @@ final class GearRepository {
             "price": gear.price,
             "maintenanceHistories": ["test": true],
             "note": gear.note,
-            "_updatedAt": Int(Date().timeIntervalSince1970),
-            "_createdAt": Int(Date().timeIntervalSince1970), // FIME: keep original value
+            "_updatedAt": todayWithUnixTimeStamp(),
+            "_createdAt": todayWithUnixTimeStamp(), // FIXME: keeping original value
         ]
 
         let data = try await ref?.child(DatabaseNodeName.gear.rawValue).child(uid).child(gear.id).setValue(updatedGear)
@@ -151,5 +169,9 @@ final class GearRepository {
 
     func getDownloadURL(uid: String, fileName: String) async throws -> URL {
         return try await imageStorageManager.getDownloadURL(uid: uid, fileName: fileName)
+    }
+
+    private func todayWithUnixTimeStamp() -> Int {
+        return Int(Date().timeIntervalSince1970)
     }
 }

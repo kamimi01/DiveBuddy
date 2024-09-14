@@ -40,6 +40,7 @@
 		D46375182C66E0D900EE45D1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D46375172C66E0D900EE45D1 /* FirebaseStorage */; };
 		D463751A2C66E17300EE45D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46375192C66E17300EE45D1 /* AppDelegate.swift */; };
 		D498FBBA2C961AA900ACD6E3 /* Gear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498FBB92C961AA900ACD6E3 /* Gear.swift */; };
+		D498FBBC2C961B4300ACD6E3 /* MaintenanceHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498FBBB2C961B4300ACD6E3 /* MaintenanceHistory.swift */; };
 		D4B298E82C5EBB2C004D32BB /* DiveBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */; };
 		D4B298EA2C5EBB2C004D32BB /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B298E92C5EBB2C004D32BB /* WelcomeView.swift */; };
 		D4B298EC2C5EBB2D004D32BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B298EB2C5EBB2D004D32BB /* Assets.xcassets */; };
@@ -108,6 +109,7 @@
 		D463750E2C66DF0000EE45D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D46375192C66E17300EE45D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D498FBB92C961AA900ACD6E3 /* Gear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gear.swift; sourceTree = "<group>"; };
+		D498FBBB2C961B4300ACD6E3 /* MaintenanceHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceHistory.swift; sourceTree = "<group>"; };
 		D4B298E42C5EBB2C004D32BB /* DiveBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiveBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveBuddyApp.swift; sourceTree = "<group>"; };
 		D4B298E92C5EBB2C004D32BB /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				D498FBB92C961AA900ACD6E3 /* Gear.swift */,
+				D498FBBB2C961B4300ACD6E3 /* MaintenanceHistory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				D40727902C62AEFD0038C5B0 /* RoundedButtonStyle.swift in Sources */,
 				D4B298EA2C5EBB2C004D32BB /* WelcomeView.swift in Sources */,
 				D462ADBF2C63E7B80054D73A /* GearListView.swift in Sources */,
+				D498FBBC2C961B4300ACD6E3 /* MaintenanceHistory.swift in Sources */,
 				D463750D2C66DD6F00EE45D1 /* SettingsViewModel.swift in Sources */,
 				D4CC2EA02C646A87003EDEDE /* GearListCellInCheckListView.swift in Sources */,
 				D446C5042C69CDAA00574348 /* GearListViewModel.swift in Sources */,

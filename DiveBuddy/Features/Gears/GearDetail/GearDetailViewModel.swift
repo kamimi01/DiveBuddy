@@ -9,16 +9,6 @@ import Foundation
 import PhotosUI
 import _PhotosUI_SwiftUI
 
-struct MaintenanceHistory: Identifiable {
-    let id: String
-    let gearID: String
-    let date: Date
-    let details: String
-    let currency: String
-    let price: Double
-    let note: String
-}
-
 final class GearDetailViewModel: ObservableObject {
     private var id = ""
     @Published var nameInput = ""

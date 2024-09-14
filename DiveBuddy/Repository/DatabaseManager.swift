@@ -7,8 +7,6 @@
 
 import Foundation
 import FirebaseDatabase
-import FirebaseStorage
-import UIKit
 
 enum RepositoryError: Error {
     case notFound
@@ -16,7 +14,7 @@ enum RepositoryError: Error {
 
 final class DatabaseManager {
     private var ref: DatabaseReference!
-    private var storageRef: StorageReference!
+    private var imageStorageManager: ImageStorageManager!
 
     private enum DatabaseNodeName: String {
         case gear = "Gear"
@@ -24,20 +22,16 @@ final class DatabaseManager {
         case maintenance = "Maintenance"
     }
 
-    private enum StorageNodeName: String {
-        case gear = "gears"
-    }
-
     init() {
         ref = Database.database().reference()
-        storageRef = Storage.storage().reference()
+        imageStorageManager = ImageStorageManager()
     }
 
     /// Create gear data
     func create(uid: String, gear: Gear) async {
         do {
             let newGearID = try await createGearData(uid: uid, gear: gear)
-            await uploadImage(uid: uid, gearID: newGearID, data: gear.imageData)
+            await imageStorageManager.uploadImage(uid: uid, gearID: newGearID, data: gear.imageData)
         } catch {
             print(error.localizedDescription)
         }
@@ -71,23 +65,10 @@ final class DatabaseManager {
         return gearID
     }
 
-    /// Upload gear image to cloud storage
-    private func uploadImage(uid: String, gearID: String, data: Data) async {
-        let imagesRef = storageRef.child("\(StorageNodeName.gear.rawValue)/\(uid)/\(gearID).png")
-
-        do {
-            _ = try await imagesRef.putDataAsync(data)
-            let downloadURL = try await imagesRef.downloadURL()
-            print("download URL:", downloadURL)
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-
     func updateGear(uid: String, gear: Gear) async {
         do {
             try await updateGearData(uid: uid, gear: gear)
-            await updateImage(uid: uid, gearID: gear.id, data: gear.imageData)
+            await imageStorageManager.updateImage(uid: uid, gearID: gear.id, data: gear.imageData)
         } catch {
             print(error.localizedDescription)
         }
@@ -110,19 +91,6 @@ final class DatabaseManager {
         print("Firebase write finished")
     }
 
-    private func updateImage(uid: String, gearID: String, data: Data) async {
-        let imagesRef = storageRef.child("\(StorageNodeName.gear.rawValue)/\(uid)/\(gearID).png")
-
-        do {
-            try await imagesRef.delete()
-            _ = try await imagesRef.putDataAsync(data)
-            let downloadURL = try await imagesRef.downloadURL()
-            print("download URL:", downloadURL)
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-
     func findGears(by uid: String) async throws -> [Gear] {
         print("Firebase read started")
         let snapshot = try await ref?.child(DatabaseNodeName.gear.rawValue).child(uid).getData()
@@ -133,13 +101,6 @@ final class DatabaseManager {
         print("received data:", snapshot.value)
         let gears = await convert(from: snapshot, uid: uid)
         return gears
-    }
-
-    func getDownloadURL(uid: String, fileName: String) async throws -> URL {
-        let imageRef = storageRef.child("\(StorageNodeName.gear.rawValue)/\(uid)/\(fileName).png")
-
-        let url = try await imageRef.downloadURL()
-        return url
     }
 
     private func convert(from snapshot: DataSnapshot, uid: String) async -> [Gear] {
@@ -171,7 +132,7 @@ final class DatabaseManager {
                 //                        }
                 //                    }
 
-                let imageData = await createImageData(uid: uid, gearId: id) ?? Data()
+                let imageData = await imageStorageManager.createImageData(uid: uid, gearId: id) ?? Data()
 
                 let gear = Gear(
                     id: id,
@@ -192,20 +153,7 @@ final class DatabaseManager {
         return gears
     }
 
-    private func createImageData(uid: String, gearId: String) async -> Data? {
-        do {
-            let url = try await getDownloadURL(uid: uid, fileName: gearId)
-
-            let (data, response) = try await URLSession.shared.data(from: url)
-            guard let response = response as? HTTPURLResponse,
-                  response.statusCode == 200 else {
-                print("failed to fetch image")
-                return nil
-            }
-            return data
-        } catch {
-            print(error.localizedDescription)
-            return nil
-        }
+    func getDownloadURL(uid: String, fileName: String) async throws -> URL {
+        return try await imageStorageManager.getDownloadURL(uid: uid, fileName: fileName)
     }
 }

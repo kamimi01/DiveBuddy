@@ -21,6 +21,7 @@
 		D40FF43F2C62EFE400585691 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF43E2C62EFE400585691 /* LoginViewModel.swift */; };
 		D446C5022C69C6C500574348 /* GearListCellInGearsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446C5012C69C6C500574348 /* GearListCellInGearsViewModel.swift */; };
 		D446C5042C69CDAA00574348 /* GearListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446C5032C69CDAA00574348 /* GearListViewModel.swift */; };
+		D45F05902C96022A00F319E9 /* ImageStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45F058F2C96022A00F319E9 /* ImageStorageManager.swift */; };
 		D462ADB62C63E5660054D73A /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADB52C63E5660054D73A /* SignupViewModel.swift */; };
 		D462ADBA2C63E7380054D73A /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADB92C63E7380054D73A /* TabBarView.swift */; };
 		D462ADBD2C63E7A40054D73A /* KitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462ADBC2C63E7A40054D73A /* KitsView.swift */; };
@@ -91,6 +92,7 @@
 		D41F51682C62A83900BEEC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D446C5012C69C6C500574348 /* GearListCellInGearsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListCellInGearsViewModel.swift; sourceTree = "<group>"; };
 		D446C5032C69CDAA00574348 /* GearListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearListViewModel.swift; sourceTree = "<group>"; };
+		D45F058F2C96022A00F319E9 /* ImageStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorageManager.swift; sourceTree = "<group>"; };
 		D462ADB52C63E5660054D73A /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		D462ADB92C63E7380054D73A /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D462ADBC2C63E7A40054D73A /* KitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitsView.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				D4009C962C693FAA009E689D /* DatabaseManager.swift */,
+				D45F058F2C96022A00F319E9 /* ImageStorageManager.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				D462ADC62C63FDC70054D73A /* NewKitView.swift in Sources */,
 				D4CC2E9C2C64659A003EDEDE /* KitCheckListView.swift in Sources */,
 				D462ADC22C63E7CE0054D73A /* SettingsView.swift in Sources */,
+				D45F05902C96022A00F319E9 /* ImageStorageManager.swift in Sources */,
 				D40FF43D2C62EFA700585691 /* SignupView.swift in Sources */,
 				D4CC2EA62C653CD1003EDEDE /* GearDetailView.swift in Sources */,
 				D40FF4372C62CBF800585691 /* LoginView.swift in Sources */,

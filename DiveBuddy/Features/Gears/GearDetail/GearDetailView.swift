@@ -153,7 +153,9 @@ private extension GearDetailView {
     func doneButton() -> some View {
         Button(action: {
             Task {
-                await viewModel.didTapUpdateButton(uid: authManager.user?.uid)
+                let uid = authManager.user?.uid
+                await viewModel.didTapUpdateButton(uid: uid)
+                gearViewModel.onAppear(uid: uid)
                 self.navigationPath.removeLast()
             }
         }) {

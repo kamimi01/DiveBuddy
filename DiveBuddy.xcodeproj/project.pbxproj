@@ -308,6 +308,18 @@
 			path = AuthService;
 			sourceTree = "<group>";
 		};
+		D498FBB82C9615FD00ACD6E3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D462ADC02C63E7C40054D73A /* Settings */,
+				D462ADB82C63E7280054D73A /* TabBar */,
+				D462ADBB2C63E78F0054D73A /* Gears */,
+				D462ADB72C63E6DF0054D73A /* Kits */,
+				D40FF4332C62C3C700585691 /* Auth */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
 		D4B298DB2C5EBB2C004D32BB = {
 			isa = PBXGroup;
 			children = (
@@ -331,16 +343,12 @@
 		D4B298E62C5EBB2C004D32BB /* DiveBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				D498FBB82C9615FD00ACD6E3 /* Features */,
 				D45F05942C96135900F319E9 /* Shared */,
 				D45F05932C9612FC00F319E9 /* Resources */,
 				D45F05912C96091500F319E9 /* Models */,
 				D4009C952C693F95009E689D /* Repositories */,
 				D463750E2C66DF0000EE45D1 /* GoogleService-Info.plist */,
-				D40FF4332C62C3C700585691 /* Auth */,
-				D462ADB82C63E7280054D73A /* TabBar */,
-				D462ADB72C63E6DF0054D73A /* Kits */,
-				D462ADBB2C63E78F0054D73A /* Gears */,
-				D462ADC02C63E7C40054D73A /* Settings */,
 				D41F51682C62A83900BEEC1D /* Info.plist */,
 				D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */,
 				D4B298ED2C5EBB2D004D32BB /* Preview Content */,

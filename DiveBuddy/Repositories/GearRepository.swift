@@ -107,20 +107,20 @@ final class GearRepository {
 
     func find(by uid: String) async throws -> [Gear] {
         print("Firebase read started")
-        let snapshot = try await ref?.child(DatabaseNodeName.gear.rawValue).child(uid).getData()
-        guard let snapshot else {
+        let gearSnapshot = try await ref?.child(DatabaseNodeName.gear.rawValue).child(uid).getData()
+        guard let gearSnapshot else {
             throw RepositoryError.notFound
         }
 
-        print("received data:", snapshot.value)
-        let gears = await convert(from: snapshot, uid: uid)
+        print("received data:", gearSnapshot.value)
+        let gears = await convert(gearSnapshot: gearSnapshot, uid: uid)
         return gears
     }
 
-    private func convert(from snapshot: DataSnapshot, uid: String) async -> [Gear] {
+    private func convert(gearSnapshot: DataSnapshot, uid: String) async -> [Gear] {
         var gears: [Gear] = []
 
-        guard let snapshotValue = snapshot.value as? [String: Any] else {
+        guard let snapshotValue = gearSnapshot.value as? [String: Any] else {
             print("Error: Snapshot value is not a dictionary")
             return gears
         }

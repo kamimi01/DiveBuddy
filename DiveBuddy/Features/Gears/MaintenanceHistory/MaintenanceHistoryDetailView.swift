@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MaintenanceHistoryDetailView: View {
     @ObservedObject private var viewModel = MaintenanceHistoryDetailViewModel()
-    private let currencies = ["CAD", "USD", "JPY"]
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -53,8 +52,8 @@ private extension MaintenanceHistoryDetailView {
                 .foregroundStyle(.primaryTextBlack)
             HStack {
                 Picker("", selection: $viewModel.selectedCurrency) {
-                    ForEach(currencies, id: \.self) {
-                        Text($0)
+                    ForEach(Currency.allCases, id: \.self) {
+                        Text($0.rawValue)
                     }
                 }
                 .pickerStyle(.menu)

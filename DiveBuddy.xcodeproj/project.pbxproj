@@ -158,13 +158,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D4009C952C693F95009E689D /* Repository */ = {
+		D4009C952C693F95009E689D /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 				D4009C962C693FAA009E689D /* GearRepository.swift */,
 				D45F058F2C96022A00F319E9 /* ImageStorageManager.swift */,
 			);
-			path = Repository;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		D407278E2C62AEEA0038C5B0 /* Components */ = {
@@ -227,6 +227,13 @@
 				D4CC2EAB2C6548A9003EDEDE /* GearDetailViewModel.swift */,
 			);
 			path = GearDetail;
+			sourceTree = "<group>";
+		};
+		D45F05912C96091500F319E9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D462ADB72C63E6DF0054D73A /* Kits */ = {
@@ -306,7 +313,8 @@
 		D4B298E62C5EBB2C004D32BB /* DiveBuddy */ = {
 			isa = PBXGroup;
 			children = (
-				D4009C952C693F95009E689D /* Repository */,
+				D45F05912C96091500F319E9 /* Models */,
+				D4009C952C693F95009E689D /* Repositories */,
 				D463750E2C66DF0000EE45D1 /* GoogleService-Info.plist */,
 				D40FF4332C62C3C700585691 /* Auth */,
 				D462ADB82C63E7280054D73A /* TabBar */,

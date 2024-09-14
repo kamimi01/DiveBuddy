@@ -8,10 +8,6 @@
 import Foundation
 import FirebaseDatabase
 
-enum RepositoryError: Error {
-    case notFound
-}
-
 final class GearRepository {
     private var ref: DatabaseReference!
     private var imageStorageManager: ImageStorageManager!

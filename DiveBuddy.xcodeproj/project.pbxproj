@@ -41,6 +41,7 @@
 		D463751A2C66E17300EE45D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46375192C66E17300EE45D1 /* AppDelegate.swift */; };
 		D498FBBA2C961AA900ACD6E3 /* Gear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498FBB92C961AA900ACD6E3 /* Gear.swift */; };
 		D498FBBC2C961B4300ACD6E3 /* MaintenanceHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498FBBB2C961B4300ACD6E3 /* MaintenanceHistory.swift */; };
+		D498FBC02C96249C00ACD6E3 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498FBBF2C96249C00ACD6E3 /* RepositoryError.swift */; };
 		D4B298E82C5EBB2C004D32BB /* DiveBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */; };
 		D4B298EA2C5EBB2C004D32BB /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B298E92C5EBB2C004D32BB /* WelcomeView.swift */; };
 		D4B298EC2C5EBB2D004D32BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B298EB2C5EBB2D004D32BB /* Assets.xcassets */; };
@@ -110,6 +111,7 @@
 		D46375192C66E17300EE45D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D498FBB92C961AA900ACD6E3 /* Gear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gear.swift; sourceTree = "<group>"; };
 		D498FBBB2C961B4300ACD6E3 /* MaintenanceHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceHistory.swift; sourceTree = "<group>"; };
+		D498FBBF2C96249C00ACD6E3 /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 		D4B298E42C5EBB2C004D32BB /* DiveBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiveBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveBuddyApp.swift; sourceTree = "<group>"; };
 		D4B298E92C5EBB2C004D32BB /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				D4009C962C693FAA009E689D /* GearRepository.swift */,
 				D45F058F2C96022A00F319E9 /* ImageStorageManager.swift */,
+				D498FBBF2C96249C00ACD6E3 /* RepositoryError.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				D4B298EA2C5EBB2C004D32BB /* WelcomeView.swift in Sources */,
 				D462ADBF2C63E7B80054D73A /* GearListView.swift in Sources */,
 				D498FBBC2C961B4300ACD6E3 /* MaintenanceHistory.swift in Sources */,
+				D498FBC02C96249C00ACD6E3 /* RepositoryError.swift in Sources */,
 				D463750D2C66DD6F00EE45D1 /* SettingsViewModel.swift in Sources */,
 				D4CC2EA02C646A87003EDEDE /* GearListCellInCheckListView.swift in Sources */,
 				D446C5042C69CDAA00574348 /* GearListViewModel.swift in Sources */,

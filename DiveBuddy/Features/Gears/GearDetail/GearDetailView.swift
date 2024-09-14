@@ -120,21 +120,27 @@ private extension GearDetailView {
             Text("Maintenance History")
                 .foregroundStyle(.primaryTextBlack)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            ForEach(viewModel.maintenanceHistories) { history in
-                VStack {
-                    Button(action: {
-                        navigationPath.append(.toMaintenanceHistoryDetailView)
-                    }) {
-                        HStack {
-                            Text(history.date.description)
-                            Spacer()
-                            Text(history.details)
-                            Image(systemName: "chevron.right")
-                        }
-                    }
+            if viewModel.maintenanceHistories.isEmpty {
+                Text("No maintenance records found")
                     .foregroundStyle(.primaryTextBlack)
-                    .frame(height: 35)
-                    Divider()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            } else {
+                ForEach(viewModel.maintenanceHistories) { history in
+                    VStack {
+                        Button(action: {
+                            navigationPath.append(.toMaintenanceHistoryDetailView)
+                        }) {
+                            HStack {
+                                Text(history.date.description)
+                                Spacer()
+                                Text(history.details)
+                                Image(systemName: "chevron.right")
+                            }
+                        }
+                        .foregroundStyle(.primaryTextBlack)
+                        .frame(height: 35)
+                        Divider()
+                    }
                 }
             }
         }

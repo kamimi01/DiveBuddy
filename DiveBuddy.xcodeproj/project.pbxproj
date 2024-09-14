@@ -12,7 +12,6 @@
 		D4009C972C693FAA009E689D /* GearRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4009C962C693FAA009E689D /* GearRepository.swift */; };
 		D407278D2C62AA9B0038C5B0 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D407278C2C62AA9B0038C5B0 /* Font+.swift */; };
 		D40727902C62AEFD0038C5B0 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D407278F2C62AEFD0038C5B0 /* RoundedButtonStyle.swift */; };
-		D40727932C62AFBA0038C5B0 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40727922C62AFBA0038C5B0 /* View+.swift */; };
 		D40FF4352C62C5F500585691 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D40FF4342C62C5F500585691 /* Localizable.xcstrings */; };
 		D40FF4372C62CBF800585691 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF4362C62CBF800585691 /* LoginView.swift */; };
 		D40FF4392C62CECE00585691 /* RoundedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FF4382C62CECE00585691 /* RoundedTextFieldStyle.swift */; };
@@ -82,7 +81,6 @@
 		D4009C962C693FAA009E689D /* GearRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearRepository.swift; sourceTree = "<group>"; };
 		D407278C2C62AA9B0038C5B0 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		D407278F2C62AEFD0038C5B0 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
-		D40727922C62AFBA0038C5B0 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "View+.swift"; path = "DiveBuddy/Components/View+.swift"; sourceTree = SOURCE_ROOT; };
 		D40FF4342C62C5F500585691 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D40FF4362C62CBF800585691 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D40FF4382C62CECE00585691 /* RoundedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldStyle.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				D407278C2C62AA9B0038C5B0 /* Font+.swift */,
-				D40727922C62AFBA0038C5B0 /* View+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -243,6 +240,15 @@
 				D40FF4342C62C5F500585691 /* Localizable.xcstrings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D45F05942C96135900F319E9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D40727912C62AFA90038C5B0 /* Extensions */,
+				D407278E2C62AEEA0038C5B0 /* Components */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		D462ADB72C63E6DF0054D73A /* Kits */ = {
@@ -322,6 +328,7 @@
 		D4B298E62C5EBB2C004D32BB /* DiveBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				D45F05942C96135900F319E9 /* Shared */,
 				D45F05932C9612FC00F319E9 /* Resources */,
 				D45F05912C96091500F319E9 /* Models */,
 				D4009C952C693F95009E689D /* Repositories */,
@@ -331,8 +338,6 @@
 				D462ADB72C63E6DF0054D73A /* Kits */,
 				D462ADBB2C63E78F0054D73A /* Gears */,
 				D462ADC02C63E7C40054D73A /* Settings */,
-				D40727912C62AFA90038C5B0 /* Extensions */,
-				D407278E2C62AEEA0038C5B0 /* Components */,
 				D41F51682C62A83900BEEC1D /* Info.plist */,
 				D4B298E72C5EBB2C004D32BB /* DiveBuddyApp.swift */,
 				D4B298ED2C5EBB2D004D32BB /* Preview Content */,
@@ -561,7 +566,6 @@
 				D446C5042C69CDAA00574348 /* GearListViewModel.swift in Sources */,
 				D4CC2E962C646142003EDEDE /* GearListCellView.swift in Sources */,
 				D4CC2EA42C653423003EDEDE /* KitListCellView.swift in Sources */,
-				D40727932C62AFBA0038C5B0 /* View+.swift in Sources */,
 				D46375062C66921500EE45D1 /* MaintenanceHistoryDetailViewModel.swift in Sources */,
 				D4009C972C693FAA009E689D /* GearRepository.swift in Sources */,
 				D4CC2E9E2C646A44003EDEDE /* KitCheckListViewModel.swift in Sources */,

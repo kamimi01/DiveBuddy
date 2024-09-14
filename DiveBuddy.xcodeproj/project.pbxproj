@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D4009C922C67FF66009E689D /* AuthRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4009C912C67FF66009E689D /* AuthRouterView.swift */; };
 		D4009C942C67FFC0009E689D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4009C932C67FFC0009E689D /* AuthManager.swift */; };
-		D4009C972C693FAA009E689D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4009C962C693FAA009E689D /* DatabaseManager.swift */; };
+		D4009C972C693FAA009E689D /* GearRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4009C962C693FAA009E689D /* GearRepository.swift */; };
 		D407278D2C62AA9B0038C5B0 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D407278C2C62AA9B0038C5B0 /* Font+.swift */; };
 		D40727902C62AEFD0038C5B0 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D407278F2C62AEFD0038C5B0 /* RoundedButtonStyle.swift */; };
 		D40727932C62AFBA0038C5B0 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40727922C62AFBA0038C5B0 /* View+.swift */; };
@@ -79,7 +79,7 @@
 /* Begin PBXFileReference section */
 		D4009C912C67FF66009E689D /* AuthRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouterView.swift; sourceTree = "<group>"; };
 		D4009C932C67FFC0009E689D /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		D4009C962C693FAA009E689D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		D4009C962C693FAA009E689D /* GearRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearRepository.swift; sourceTree = "<group>"; };
 		D407278C2C62AA9B0038C5B0 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		D407278F2C62AEFD0038C5B0 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
 		D40727922C62AFBA0038C5B0 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "View+.swift"; path = "DiveBuddy/Components/View+.swift"; sourceTree = SOURCE_ROOT; };
@@ -161,7 +161,7 @@
 		D4009C952C693F95009E689D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				D4009C962C693FAA009E689D /* DatabaseManager.swift */,
+				D4009C962C693FAA009E689D /* GearRepository.swift */,
 				D45F058F2C96022A00F319E9 /* ImageStorageManager.swift */,
 			);
 			path = Repository;
@@ -547,7 +547,7 @@
 				D4CC2EA42C653423003EDEDE /* KitListCellView.swift in Sources */,
 				D40727932C62AFBA0038C5B0 /* View+.swift in Sources */,
 				D46375062C66921500EE45D1 /* MaintenanceHistoryDetailViewModel.swift in Sources */,
-				D4009C972C693FAA009E689D /* DatabaseManager.swift in Sources */,
+				D4009C972C693FAA009E689D /* GearRepository.swift in Sources */,
 				D4CC2E9E2C646A44003EDEDE /* KitCheckListViewModel.swift in Sources */,
 				D40FF43F2C62EFE400585691 /* LoginViewModel.swift in Sources */,
 				D462ADBA2C63E7380054D73A /* TabBarView.swift in Sources */,

@@ -41,9 +41,9 @@ final class GearDetailViewModel: ObservableObject {
     }
     @Published var selectedImageData = Data()
 
-    private var databaseManager: DatabaseManager?
+    private var databaseManager: GearRepository?
 
-    init(databaseManager: DatabaseManager = DatabaseManager()) {
+    init(databaseManager: GearRepository = GearRepository()) {
         self.databaseManager = databaseManager
     }
 
@@ -109,7 +109,7 @@ final class GearDetailViewModel: ObservableObject {
         if id.isEmpty {
             await databaseManager?.create(uid: uid, gear: gear)
         } else {
-            await databaseManager?.updateGear(uid: uid, gear: gear)
+            await databaseManager?.update(uid: uid, gear: gear)
         }
     }
 }

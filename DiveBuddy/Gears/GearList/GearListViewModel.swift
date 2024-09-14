@@ -13,9 +13,9 @@ final class GearListViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var selectedGear: Gear?
 
-    private var databaseManager: DatabaseManager?
+    private var databaseManager: GearRepository?
 
-    init(databaseManager: DatabaseManager = DatabaseManager()) {
+    init(databaseManager: GearRepository = GearRepository()) {
         self.databaseManager = databaseManager
     }
 
@@ -26,7 +26,7 @@ final class GearListViewModel: ObservableObject {
 
         Task {
             do {
-                let gears = try await databaseManager?.findGears(by: uid)
+                let gears = try await databaseManager?.find(by: uid)
                 await MainActor.run {
                     guard let gears else {
                         print("cannot find any gears")

@@ -10,9 +10,9 @@ import Foundation
 final class GearListCellInGearsViewModel: ObservableObject {
     @Published var imageURL: URL?
 
-    private var databaseManager: DatabaseManager?
+    private var databaseManager: GearRepository?
 
-    init(databaseManager: DatabaseManager = DatabaseManager()) {
+    init(databaseManager: GearRepository = GearRepository()) {
         self.databaseManager = databaseManager
     }
 

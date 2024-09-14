@@ -1,5 +1,5 @@
 //
-//  DatabaseManager.swift
+//  GearRepository.swift
 //  DiveBuddy
 //
 //  Created by mikaurakawa on 2024-08-11.
@@ -12,7 +12,7 @@ enum RepositoryError: Error {
     case notFound
 }
 
-final class DatabaseManager {
+final class GearRepository {
     private var ref: DatabaseReference!
     private var imageStorageManager: ImageStorageManager!
 
@@ -65,7 +65,7 @@ final class DatabaseManager {
         return gearID
     }
 
-    func updateGear(uid: String, gear: Gear) async {
+    func update(uid: String, gear: Gear) async {
         do {
             try await updateGearData(uid: uid, gear: gear)
             await imageStorageManager.updateImage(uid: uid, gearID: gear.id, data: gear.imageData)
@@ -91,7 +91,7 @@ final class DatabaseManager {
         print("Firebase write finished")
     }
 
-    func findGears(by uid: String) async throws -> [Gear] {
+    func find(by uid: String) async throws -> [Gear] {
         print("Firebase read started")
         let snapshot = try await ref?.child(DatabaseNodeName.gear.rawValue).child(uid).getData()
         guard let snapshot else {

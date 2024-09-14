@@ -30,6 +30,7 @@ final class GearDetailViewModel: ObservableObject {
         }
     }
     @Published var selectedImageData = Data()
+    @Published var maintenanceHistories: [MaintenanceHistory] = []
 
     private var databaseManager: GearRepository?
 
@@ -46,34 +47,8 @@ final class GearDetailViewModel: ObservableObject {
         selectedPurchaseDate = gear?.purchaseDate ?? Date()
         noteInput = gear?.note ?? ""
         selectedImageData = gear?.imageData ?? Data()
+        maintenanceHistories = gear?.maintenanceHistories ?? [MaintenanceHistory]()
     }
-
-    let maitenanceHistories = [
-        MaintenanceHistory(
-            id: "maintenance1",
-            date: Date(timeIntervalSince1970: 1627843200), // 2021-08-01
-            details: "Routine check-up and seal replacement",
-            currency: .usd,
-            price: 150.0,
-            note: "Replaced seals and lubricated zippers."
-        ),
-        MaintenanceHistory(
-            id: "maintenance2",
-            date: Date(timeIntervalSince1970: 1633046400), // 2021-10-01
-            details: "Battery replacement",
-            currency: .eur,
-            price: 30.0,
-            note: "Replaced battery and performed function check."
-        ),
-        MaintenanceHistory(
-            id: "maintenance3",
-            date: Date(timeIntervalSince1970: 1640995200), // 2022-01-01
-            details: "Software update",
-            currency: .eur,
-            price: 20.0,
-            note: "Updated to latest firmware version."
-        )
-    ]
 
     func didTapUpdateButton(uid: String?) async {
         guard let uid else {

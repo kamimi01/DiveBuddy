@@ -12,7 +12,6 @@ struct GearDetailView: View {
     @EnvironmentObject var authManager: AuthManager
     @ObservedObject private var viewModel = GearDetailViewModel()
     @ObservedObject var gearViewModel: GearListViewModel
-    private let currencies = ["CAD", "USD", "JPY"]
     @Binding var navigationPath: [CustomNavigationPath]
 
     var body: some View {
@@ -92,8 +91,8 @@ private extension GearDetailView {
                 .foregroundStyle(.primaryTextBlack)
             HStack {
                 Picker("", selection: $viewModel.selectedCurrency) {
-                    ForEach(currencies, id: \.self) {
-                        Text($0)
+                    ForEach(Currency.allCases, id: \.self) {
+                        Text($0.rawValue)
                     }
                 }
                 .pickerStyle(.menu)
@@ -121,7 +120,7 @@ private extension GearDetailView {
             Text("Maintenance History")
                 .foregroundStyle(.primaryTextBlack)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            ForEach(viewModel.maitenanceHistories) { history in
+            ForEach(viewModel.maintenanceHistories) { history in
                 VStack {
                     Button(action: {
                         navigationPath.append(.toMaintenanceHistoryDetailView)

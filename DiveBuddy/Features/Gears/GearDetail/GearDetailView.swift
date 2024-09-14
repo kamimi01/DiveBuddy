@@ -100,6 +100,7 @@ private extension GearDetailView {
                 .tint(.primaryTextBlack)
                 TextField("100", text: $viewModel.priceInput)
                     .roundedTextField()
+                    .keyboardType(.numberPad)
             }
         }
     }

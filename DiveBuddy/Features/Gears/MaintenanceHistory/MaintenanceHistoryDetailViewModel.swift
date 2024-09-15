@@ -14,7 +14,11 @@ final class MaintenanceHistoryDetailViewModel: ObservableObject {
     @Published var priceInput = "0"
     @Published var noteInput = ""
 
-    func onAppear(maintenance: MaintenanceHistory) {
+    func onAppear(maintenance: MaintenanceHistory?) {
+        guard let maintenance else {
+            print("new maintenance history")
+            return
+        }
         selectedMaintenanceDate = maintenance.date
         detailsInput = maintenance.details
         selectedCurrency = maintenance.currency

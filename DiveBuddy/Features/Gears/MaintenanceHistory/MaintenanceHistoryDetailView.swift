@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MaintenanceHistoryDetailView: View {
-    var maintenanceHistory: MaintenanceHistory
+    var maintenanceHistory: MaintenanceHistory?
     @ObservedObject private var viewModel = MaintenanceHistoryDetailViewModel()
 
     var body: some View {

@@ -11,7 +11,7 @@ enum CustomNavigationPath: Hashable {
     case toNewKitView
     case toKitCheckListView
     case toGearDetailView
-    case toMaintenanceHistoryDetailView(maitenanceHistory: MaintenanceHistory)
+    case toMaintenanceHistoryDetailView(maitenanceHistory: MaintenanceHistory?)
 }
 
 struct KitsView: View {

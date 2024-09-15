@@ -37,6 +37,9 @@
         }
       }
     },
+    "Add" : {
+
+    },
     "Are you sure you want to log out?" : {
       "localizations" : {
         "ja" : {

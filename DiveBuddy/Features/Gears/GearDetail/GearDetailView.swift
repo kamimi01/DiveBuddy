@@ -117,9 +117,17 @@ private extension GearDetailView {
 
     func maitenanceHistoryView() -> some View {
         VStack(alignment: .leading) {
-            Text("Maintenance History")
-                .foregroundStyle(.primaryTextBlack)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            HStack {
+                Text("Maintenance History")
+                    .foregroundStyle(.primaryTextBlack)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Button(action: {
+                    navigationPath.append(.toMaintenanceHistoryDetailView(maitenanceHistory: nil))
+                }) {
+                    Text("Add")
+                        .foregroundStyle(.accentBlue)
+                }
+            }
             if viewModel.maintenanceHistories.isEmpty {
                 Text("No maintenance records found")
                     .foregroundStyle(.primaryTextBlack)

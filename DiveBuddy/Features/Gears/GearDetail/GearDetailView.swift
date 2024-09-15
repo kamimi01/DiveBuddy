@@ -131,7 +131,7 @@ private extension GearDetailView {
                             navigationPath.append(.toMaintenanceHistoryDetailView(maitenanceHistory: history))
                         }) {
                             HStack {
-                                Text(history.date.description)
+                                Text(history.date.format(with: .date))
                                 Spacer()
                                 Text(history.details)
                                 Image(systemName: "chevron.right")

@@ -31,7 +31,7 @@ struct GearCellView: View {
             viewModel.onAppear(uid: authManager.user?.uid, gear: gear)
         }
         .navigationDestination(isPresented: $isPresentedDetailView) {
-            GearDetailView(gearViewModel: gearViewModel, navigationPath: $navigationPath)
+            GearDetailView(gearViewModel: gearViewModel)
                 .environmentObject(authManager)
         }
     }

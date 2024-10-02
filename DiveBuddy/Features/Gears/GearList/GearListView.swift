@@ -110,7 +110,7 @@ private extension GearListView {
         }
         .roundedCardButton(.one)
         .navigationDestination(isPresented: $isPresentedDetailView) {
-            GearDetailView(gearViewModel: viewModel, navigationPath: $navigationPath)
+            GearDetailView(gearViewModel: viewModel)
                 .environmentObject(authManager)
         }
     }

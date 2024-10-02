@@ -12,7 +12,8 @@ struct GearDetailView: View {
     @EnvironmentObject var authManager: AuthManager
     @ObservedObject private var viewModel = GearDetailViewModel()
     @ObservedObject var gearViewModel: GearListViewModel
-    @Binding var navigationPath: [CustomNavigationPath]
+    @State private var isPresentedMaintenanceView = false
+    @State private var isNewHistory = false
 
     var body: some View {
         ScrollView {
@@ -122,7 +123,8 @@ private extension GearDetailView {
                     .foregroundStyle(.primaryTextBlack)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Button(action: {
-                    navigationPath.append(.toMaintenanceHistoryDetailView(maitenanceHistory: nil))
+                    isPresentedMaintenanceView = true
+                    isNewHistory = true
                 }) {
                     Text("Add")
                         .foregroundStyle(.accentBlue)
@@ -132,11 +134,15 @@ private extension GearDetailView {
                 Text("No maintenance records found")
                     .foregroundStyle(.primaryTextBlack)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .navigationDestination(isPresented: $isPresentedMaintenanceView) {
+                        MaintenanceHistoryDetailView(maintenanceHistory: nil)
+                    }
             } else {
                 ForEach(viewModel.maintenanceHistories) { history in
                     VStack {
                         Button(action: {
-                            navigationPath.append(.toMaintenanceHistoryDetailView(maitenanceHistory: history))
+                            isPresentedMaintenanceView = true
+                            isNewHistory = false
                         }) {
                             HStack {
                                 Text(history.date.format(with: .date))
@@ -148,6 +154,13 @@ private extension GearDetailView {
                         .foregroundStyle(.primaryTextBlack)
                         .frame(height: 35)
                         Divider()
+                    }
+                    .navigationDestination(isPresented: $isPresentedMaintenanceView) {
+                        if isNewHistory {
+                            MaintenanceHistoryDetailView(maintenanceHistory: nil)
+                        } else {
+                            MaintenanceHistoryDetailView(maintenanceHistory: history)
+                        }
                     }
                 }
             }
@@ -170,7 +183,6 @@ private extension GearDetailView {
                 let uid = authManager.user?.uid
                 await viewModel.didTapUpdateButton(uid: uid)
                 gearViewModel.onAppear(uid: uid)
-                self.navigationPath.removeLast()
             }
         }) {
             Text("Done")
@@ -179,5 +191,5 @@ private extension GearDetailView {
 }
 
 #Preview {
-    GearDetailView(gearViewModel: GearListViewModel(), navigationPath: .constant([.toNewKitView]))
+    GearDetailView(gearViewModel: GearListViewModel())
 }

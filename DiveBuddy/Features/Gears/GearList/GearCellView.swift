@@ -1,5 +1,5 @@
 //
-//  GearListCellInGearsView.swift
+//  GearCellView.swift
 //  DiveBuddy
 //
 //  Created by mikaurakawa on 2024-08-08.
@@ -7,17 +7,18 @@
 
 import SwiftUI
 
-struct GearListCellInGearsView: View {
+struct GearCellView: View {
     @ObservedObject private var viewModel = GearListCellInGearsViewModel()
     @ObservedObject var gearViewModel: GearListViewModel
     @EnvironmentObject var authManager: AuthManager
     @Binding var navigationPath: [CustomNavigationPath]
     let gear: Gear
+    @State private var isPresentedDetailView = false
 
     var body: some View {
         Button(action: {
             gearViewModel.didTapGearListCell(gear: gear)
-            navigationPath.append(.toGearDetailView)
+            isPresentedDetailView = true
         }) {
             VStack(spacing: 15) {
                 circleWithGearImage()
@@ -29,10 +30,14 @@ struct GearListCellInGearsView: View {
         .onAppear {
             viewModel.onAppear(uid: authManager.user?.uid, gear: gear)
         }
+        .navigationDestination(isPresented: $isPresentedDetailView) {
+            GearDetailView(gearViewModel: gearViewModel, navigationPath: $navigationPath)
+                .environmentObject(authManager)
+        }
     }
 }
 
-private extension GearListCellInGearsView {
+private extension GearCellView {
     func circleWithGearImage() -> some View {
         Group {
             if let url = viewModel.imageURL {
@@ -60,7 +65,7 @@ private extension GearListCellInGearsView {
 
 
 #Preview {
-    GearListCellInGearsView(
+    GearCellView(
         gearViewModel: GearListViewModel(),
         navigationPath: .constant([.toGearDetailView]),
         gear: Gear(

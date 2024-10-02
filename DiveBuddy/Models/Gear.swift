@@ -14,7 +14,7 @@ enum Currency: String, CaseIterable {
     case jpy = "JPY"
 }
 
-struct Gear: Identifiable {
+struct Gear: Identifiable, Hashable {
     let id: String
     let name: String
     let imageData: Data

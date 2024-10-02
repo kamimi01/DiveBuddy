@@ -18,7 +18,8 @@ final class GearListCellInGearsViewModel: ObservableObject {
 
     func onAppear(uid: String?, gear: Gear) {
         guard let uid else {
-            fatalError("cannot find uid")
+            print("cannot find uid")
+            return
         }
         getDownloadURL(uid: uid, id: gear.id)
     }

@@ -12,20 +12,44 @@ struct GearListView: View {
     @ObservedObject private var viewModel = GearListViewModel()
     @State private var navigationPath: [CustomNavigationPath] = []
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+    @State private var isPresentedDetailView = false
 
     var body: some View {
-        NavigationStack(path: $navigationPath) {
+        NavigationStack {
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 30) {
+                Grid(alignment: .topLeading, horizontalSpacing: 30, verticalSpacing: 30) {
                     if viewModel.gears.isEmpty {
-                        instructionCardButton()
+                        GridRow {
+                            instructionCardButton()
+                            addGearCardButton()
+                        }
                     } else {
-                        ForEach(viewModel.gears) { gear in
-                            GearListCellInGearsView(gearViewModel: viewModel, navigationPath: $navigationPath, gear: gear)
-                                .environmentObject(authManager)
+                        // 分割して行を生成
+                        let chunkedGears = Array(viewModel.gears.chunked(into: 2))
+
+                        // 最後の行かどうかを確認
+                        ForEach(chunkedGears.indices, id: \.self) { index in
+                            let gearRow = chunkedGears[index]
+                            GridRow {
+                                ForEach(gearRow) { gear in
+                                    GearCellView(gearViewModel: viewModel, navigationPath: $navigationPath, gear: gear)
+                                        .environmentObject(authManager)
+                                }
+
+                                // 奇数の場合、隣に `addGearCardButton` を表示
+                                if gearRow.count == 1 && index == chunkedGears.count - 1 {
+                                    addGearCardButton()
+                                }
+                            }
+                        }
+
+                        // 偶数の場合は新しい行に `addGearCardButton` を表示
+                        if viewModel.gears.count % 2 == 0 {
+                            GridRow {
+                                addGearCardButton()
+                            }
                         }
                     }
-                    addGearCardButton()
                 }
             }
             .padding(.top, 20)
@@ -34,9 +58,6 @@ struct GearListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: CustomNavigationPath.self) { path in
                 switch path {
-                case .toGearDetailView: 
-                    GearDetailView(gearViewModel: viewModel, navigationPath: $navigationPath)
-                        .environmentObject(authManager)
                 case .toMaintenanceHistoryDetailView(let maintenanceHistory):
                     MaintenanceHistoryDetailView(maintenanceHistory: maintenanceHistory)
                 default: EmptyView()
@@ -79,7 +100,7 @@ private extension GearListView {
     func addGearCardButton() -> some View {
         Button(action: {
             viewModel.didTapAddGearCardButton()
-            navigationPath.append(.toGearDetailView)
+            isPresentedDetailView = true
         }) {
             Image(systemName: "plus")
                 .resizable()
@@ -88,9 +109,21 @@ private extension GearListView {
                 .roundedCardButtonFrame()
         }
         .roundedCardButton(.one)
+        .navigationDestination(isPresented: $isPresentedDetailView) {
+            GearDetailView(gearViewModel: viewModel, navigationPath: $navigationPath)
+                .environmentObject(authManager)
+        }
     }
 }
 
 #Preview {
     GearListView()
+}
+
+extension Array {
+    func chunked(into size: Int) -> [[Element]] {
+        stride(from: 0, to: count, by: size).map {
+            Array(self[$0..<Swift.min($0 + size, count)])
+        }
+    }
 }

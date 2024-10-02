@@ -50,6 +50,15 @@ final class GearDetailViewModel: ObservableObject {
         maintenanceHistories = gear?.maintenanceHistories ?? [MaintenanceHistory]()
     }
 
+    /// Call this method from MaintenanceDetailView to update maintenance info
+    func didUpdateMaintenance(_ maintenance: MaintenanceHistory) {
+        guard let index = maintenanceHistories.firstIndex(where: { $0.id == maintenance.id }) else {
+            print("cannot find id")
+            return
+        }
+        maintenanceHistories[index] = maintenance
+    }
+
     func didTapUpdateButton(uid: String?) async {
         guard let uid else {
             print("cannot find uid")
@@ -64,7 +73,7 @@ final class GearDetailViewModel: ObservableObject {
             price: Double(priceInput) ?? 0,
             currency: Currency(rawValue: selectedCurrency) ?? .usd,
             purchaseDate: selectedPurchaseDate,
-            maintenanceHistories: [MaintenanceHistory(id: "maitenanceID1", date: Date(),details: "", currency: .jpy, price: 0, note: "")],
+            maintenanceHistories: maintenanceHistories,
             note: noteInput
         )
 

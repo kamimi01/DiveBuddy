@@ -27,6 +27,7 @@ struct SignupView: View {
                 viewModel.didTapOKInErrorAlert()
             })
         }
+        .fullScreenBackground(.primaryBackgroundWhite)
     }
 }
 

@@ -45,6 +45,7 @@ struct KitsView: View {
                 }
             }
         }
+        .fullScreenBackground(.primaryBackgroundWhite)
     }
 }
 

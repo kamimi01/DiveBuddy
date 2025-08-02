@@ -11,25 +11,22 @@ struct WelcomeView: View {
     @ObservedObject private var viewModel = WelcomeViewModel()
 
     var body: some View {
-        ZStack {
-            Color.accentBlue
-                .ignoresSafeArea()
-            VStack {
-                Spacer()
-                Image(.sampleIcon)
-                Spacer()
-                welcomeText()
-                    .padding(.bottom, 30)
-                authView()
-                    .padding(.bottom, 50)
-            }
-            .padding(.horizontal, 20)
-            .alert(viewModel.errorMessage, isPresented: $viewModel.isPresentedErrorAlert) {
-                Button("OK", role: .cancel, action: {
-                    viewModel.didTapOKInErrorAlert()
-                })
-            }
+        VStack {
+            Spacer()
+            Image(.sampleIcon)
+            Spacer()
+            welcomeText()
+                .padding(.bottom, 30)
+            authView()
+                .padding(.bottom, 50)
         }
+        .padding(.horizontal, 20)
+        .alert(viewModel.errorMessage, isPresented: $viewModel.isPresentedErrorAlert) {
+            Button("OK", role: .cancel, action: {
+                viewModel.didTapOKInErrorAlert()
+            })
+        }
+        .fullScreenBackground(.accentBlue)
     }
 }
 

@@ -67,6 +67,7 @@ struct GearListView: View {
         .onAppear {
             viewModel.onAppear(uid: authManager.user?.uid)
         }
+        .fullScreenBackground(.primaryBackgroundWhite)
     }
 }
 

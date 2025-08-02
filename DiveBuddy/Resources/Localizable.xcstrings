@@ -369,6 +369,7 @@
       }
     },
     "Register" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {

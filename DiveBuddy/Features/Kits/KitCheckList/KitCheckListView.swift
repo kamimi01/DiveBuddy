@@ -28,6 +28,7 @@ struct KitCheckListView: View {
                 editButton()
             }
         }
+        .fullScreenBackground(.primaryBackgroundWhite)
     }
 }
 

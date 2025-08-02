@@ -27,6 +27,7 @@ struct MaintenanceHistoryDetailView: View {
         .onAppear {
             viewModel.onAppear(maintenance: maintenanceHistory)
         }
+        .fullScreenBackground(.primaryBackgroundWhite)
     }
 }
 

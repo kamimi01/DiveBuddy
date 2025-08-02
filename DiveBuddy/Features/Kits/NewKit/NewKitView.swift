@@ -26,6 +26,7 @@ struct NewKitView: View {
                 doneButton()
             }
         }
+        .fullScreenBackground(.primaryBackgroundWhite)
     }
 }
 

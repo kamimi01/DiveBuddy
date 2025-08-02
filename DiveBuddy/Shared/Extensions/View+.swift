@@ -9,12 +9,14 @@ import Foundation
 import SwiftUI
 
 extension View {
-    func roundedButton(_ buttonType: ButtonType) -> some View {
-        self.buttonStyle(RoundedButtonStyle(buttonType: buttonType))
-    }
-
+    // TextField
     func roundedTextField() -> some View {
         self.textFieldStyle(RoundedTextFieldStyle())
+    }
+
+    // Button
+    func roundedButton(_ buttonType: ButtonType) -> some View {
+        self.buttonStyle(RoundedButtonStyle(buttonType: buttonType))
     }
 
     func roundedCardButton(_ buttonType: CardButtonType) -> some View {
@@ -24,5 +26,9 @@ extension View {
     func roundedCardButtonFrame() -> some View {
         self.frame(height: 160)
             .frame(maxWidth: 150)
+    }
+
+    func fullScreenBackground(_ color: Color) -> some View {
+        self.modifier(FullScreenBackgroundViewModifier(color: color))
     }
 }

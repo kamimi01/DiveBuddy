@@ -44,15 +44,19 @@ private extension GearDetailView {
                         .resizable()
                         .frame(width: 150, height: 150)
                         .clipShape(.rect(cornerRadius: 100))
+                    Image(systemName: "square.and.pencil")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                        .foregroundStyle(.primaryIconGray)
                 } else {
                     Circle()
                         .fill(.secondaryBgGray)
                         .frame(width: 150, height: 150)
+                    Image(.bcd)
+                        .resizable()
+                        .frame(width: 90, height: 90)
+                        .foregroundStyle(.primaryIconGray)
                 }
-                Image(systemName: "square.and.pencil")
-                    .resizable()
-                    .frame(width: 25, height: 25)
-                    .foregroundStyle(.primaryIconGray)
             }
         }
     }
